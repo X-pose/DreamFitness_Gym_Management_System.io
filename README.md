@@ -1,4 +1,4 @@
-Please go under edit and edit this file as needed for your project
+ 
 
 # Project Name - Gym Management System for Dream Fitness Gym
 # Batch - Y2.S2.WD.IT.02.02
