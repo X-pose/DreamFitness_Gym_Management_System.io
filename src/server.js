@@ -1,16 +1,8 @@
 //This is Node.js server. All the server related configurations should be in here
+//In here, we create and starts the HTTP server
 const http = require('http');
 const app = require('./app');
 
-
-const server = http.createServer(app);
-
-
-const port = process.env.PORT || 3000;
-
-
-console.log(`Server will listen on port ${port}`);
-
-server.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
+//Creates HTTP server
+const server = http.createServer(app); //Gets express app instance to create the server
+module.exports = server; //Exports the HTTP server
