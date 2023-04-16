@@ -1,20 +1,18 @@
 //This is the entry point to the express app server. All the app related configurations should be done in here
 console.log('Loading app.js...');
 const express = require('express');
-const bodyParser = require('body-parser');
-const connectDB = require('./config/database')
+//const connectDB = require('./config/database');
+const userManagementRoutes = require('./routes/userManagementRoutes');
 const app = express();
-//Test_connection
-connectDB.getInstance_SA();
-connectDB.getInstance_M();
-connectDB.getInstance_I();
-connectDB.getInstance_C();
-//setting up middleware
-app.use(bodyParser.json());
+const appRouter = express.Router();
 
-app.get('/', (req, res) => {
-    res.send('Hello World!');
-  });
+
+//setting up middleware
+app.use(express.json());
+
+app.use('/', appRouter);
+
+app.use('/', userManagementRoutes);
 
 module.exports = app;
 console.log('Exporting app instance...');
