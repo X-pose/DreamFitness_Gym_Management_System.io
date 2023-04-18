@@ -20,13 +20,18 @@ router.post('/api/loginformdata', (req,res)=>{
   loginController.login(req,res);
 })
 
-//Display account details route
+//Get account details to display in account UI route
 router.get('/api/accountdetails', (req,res) =>{
   userAccountController.getAccountDetails(req,res);
 })
 
+//logout route
 router.post('/api/logout', (req,res) =>{
   loginController.logOut(req,res);
+})
+
+router.put('/api/updateMyDetails', (req,res) =>{
+  userAccountController.updateMyDetails(req,res);
 })
 
 

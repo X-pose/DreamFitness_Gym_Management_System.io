@@ -3,6 +3,7 @@
 
 const sendUser = require('../models/signUPModel');
 const getUser = require('../models/myAccountDetailsModel');
+const updUser = require('../models/updateDetailsModel');
 const {sessionDetails} = require('../controllers/loginController');
 
 
@@ -118,3 +119,23 @@ exports.getAccountDetails = async (req, res) =>  {
     }
   }
 
+  //User detail Update process. CRUD - Update
+exports.updateMyDetails = async(req,res) =>{
+
+  try {
+    //Getting session name from login
+    const sessionUserName = await sessionDetails();
+
+    const updatedUser = await updUser.findOneAndUpdate(
+      {userName :sessionUserName},
+      {$set:req.body},
+      {new:true}
+    );
+
+    res.status(200).json(updatedUser);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal server error at update user' });
+  }
+
+}
