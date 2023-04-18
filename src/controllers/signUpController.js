@@ -43,6 +43,27 @@ exports.signUpUser = async (req, res) =>  {
         email: req.body.email,
         contactNo: req.body.contactNo,
         psw: hashedPassword,
+
+        DOB : null,
+        gender : null,
+        NIC :null,
+        age : null,
+        height : null,
+        weight : null,
+        TFP : null,
+        BMI : null,
+        goal : null,
+        emergencyContact : null,
+        address : null,
+        proPic : null,
+        myFitnessPlan :  null,
+        paymentMethod : null,
+        paymentStatus : null,
+        planStartedDate : null,
+        accountStatus : null,
+        mySchedule : null,
+        myDiet : null,
+        myProgress : null,
         
       });
 

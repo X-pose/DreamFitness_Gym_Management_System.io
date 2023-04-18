@@ -5,7 +5,7 @@
 
 const loginUser = require('../models/loginModel');
 const bcrypt = require('bcrypt');
-
+let sessionName;
 
 
 
@@ -33,15 +33,15 @@ exports.login = async(req,res)=>{
                 }else{
 
                     if (result) {
-                        // Passwords match, create a session and redirect to homepage
-                        const sessionData = {
-                            userName: user.userName,
-
-                          };
-                          // Assign the session data to req.session
-                          req.session = sessionData;
-                          this.sessionDetails(req,res);
-                          console.log('Session created for' + req.session.userName);
+                        console.log(req.session);
+                        console.log('Session ID ' + user._id);
+                        // Assign the session data to req.session
+                        req.session.userID = user._id;
+                        req.session.userName = user.userName;
+                        console.log('Session created for' + req.session.userName);
+                        sessionName = req.session.userName;
+                        res.cookie('sessionId', req.session.userID);
+                        res.send('Logged in successfully!');
                         
                     } else {
                         // Passwords don't match
@@ -62,15 +62,19 @@ exports.login = async(req,res)=>{
         res.status(500).send('Server Error at login');
     }
     
-    exports.sessionDetails = async(req,res) => {
-        const userData = {
-            userName: req.session.userName,
-          };
-          res.json(userData);
-    }
 }
 
+exports.sessionDetails = async() => {
+    
+    console.log('exporting session details : ' + sessionName) 
+    return sessionName;
+}
 
+exports.logOut = async(req,res) =>{
+    req.session.destroy();
+    res.clearCookie('sessionId');
+    res.send('Logged out successfully!');
+}
 
 
 

@@ -30,7 +30,7 @@ const signUpSchema = new mongoose.Schema({
   emergencyContact : { type: String, required: false },
   address : { type: String, required: false },
   //
-  psw: { type: String, required: true },
+  psw: { type: String, required: false },
   //
   proPic : { type: String, required: false },
   myFitnessPlan :  { type: String, required: false },
