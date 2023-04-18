@@ -30,11 +30,15 @@ router.post('/api/logout', (req,res) =>{
   loginController.logOut(req,res);
 })
 
+//Update user details route
 router.put('/api/updateMyDetails', (req,res) =>{
   userAccountController.updateMyDetails(req,res);
 })
 
-
+//Delete account route
+router.delete('/api/deleteAccount',(res) =>{
+  userAccountController.deleteMyAccount(res);
+})
 
 
 //Exports Router

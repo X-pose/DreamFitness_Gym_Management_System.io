@@ -139,3 +139,17 @@ exports.updateMyDetails = async(req,res) =>{
   }
 
 }
+
+exports.deleteMyAccount = async(res) =>{
+  try {
+    const sessionUserName = await sessionDetails();
+     await sendUser.findOneAndDelete(
+      {userName:sessionUserName}
+    );
+    console.log("user deleted!")
+    
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: 'Internal server error at delete user' });
+  }
+}
