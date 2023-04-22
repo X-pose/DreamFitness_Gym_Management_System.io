@@ -4,6 +4,7 @@ const express = require('express');
 const session = require('express-session');
 const crypto = require('crypto');
 const userManagementRoutes = require('./routes/userManagementRoutes');
+const workoutScheduleRoutes = require('./routes/workoutSchedulerRoutes')
 const cookieParser = require('cookie-parser');
 const app = express();
 const appRouter = express.Router();
@@ -28,6 +29,9 @@ app.use(express.json());
 app.use('/', appRouter);
 
 app.use('/', userManagementRoutes);
+
+app.use('/', workoutScheduleRoutes);
+
 
 
 
