@@ -9,8 +9,8 @@ const connectDB = require('../config/database')
 const signUpSchema = new mongoose.Schema({
   userID : {type: String, required: true},  
   userName: { type: String, required: true},
-  fName: { type: String, required: true },
-  lName: { type: String, required: true },
+  fName: { type: String, required: false },
+  lName: { type: String, required: false },
   //
   DOB : { type: Date, required: false },
   gender : { type: String, required: false },
@@ -23,8 +23,8 @@ const signUpSchema = new mongoose.Schema({
   goal : { type: String, required: false },
   
   //
-  email: { type: String, required: true },
-  contactNo: { type: String, required: true },
+  email: { type: String, required: false },
+  contactNo: { type: String, required: false },
   //
  
   emergencyContact : { type: String, required: false },

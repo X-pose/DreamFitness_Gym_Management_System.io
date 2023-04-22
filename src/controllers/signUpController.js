@@ -61,9 +61,9 @@ exports.signUpUser = async (req, res) =>  {
         paymentStatus : null,
         planStartedDate : null,
         accountStatus : null,
-        mySchedule : null,
-        myDiet : null,
-        myProgress : null,
+        mySchedule : 'N/A',
+        myDiet : 'N/A',
+        myProgress : 'N/A',
         
       });
 
