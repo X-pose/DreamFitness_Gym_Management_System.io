@@ -1,0 +1,248 @@
+.MainbackgroundWhite{
+    background-color: #fafafa4b;
+    background: linear-gradient(to top, rgba(250, 250, 250, 0) 0.5%, rgba(255, 255, 255, 0.507) 98%);
+    
+    
+    position: relative;
+    margin-top: 30%;
+    margin-bottom: -25%;
+    top: 57%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100vh;
+    
+    border-radius: 20px;
+    
+    padding: 10px;
+}
+
+.panelContainer {
+    position:relative;
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    
+    width: fit-content;
+    height: fit-content;
+    
+   
+  }
+.MainHeaderTxt{
+    color: white;
+    margin-top: 50px;
+}
+.leftContainer {
+    display: grid;
+    position: relative;
+    
+    grid-template-rows: 15% 85%;
+    row-gap: 7%;
+    padding: 10px;
+   
+  }
+.NameCompartment{
+    position: relative;
+    display:grid;
+    grid-template-columns: 65% 35%;
+    height: 100%;
+   
+ background-color: #000000;
+ border-radius: 10px;
+ box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+ padding: 5%;
+ 
+}
+
+.nameCompLeft{
+    position: relative;
+    height: 100%
+}
+.nameCompRight{
+    position: relative;
+ height: 100%;
+}
+.logOutBtnAdmin{
+    
+    position: relative;
+    margin-left: 0;
+    width:fit-content;
+    height: fit-content;
+    background-color: red;
+    border-radius: 10px;
+   
+}
+.NameAlign{
+    font-size: medium;
+    font-weight: 900;
+    position: relative;
+    text-align: left;
+    width:fit-content;
+    height: fit-content;
+    color:white;
+    
+}
+.roleAlign{
+    position: relative;
+    font-size: medium;
+    text-align: left;
+    height: fit-content;
+    width: fit-content;
+    color:white;
+}
+.leftBottomComp{
+    
+    height: fit-content;
+    background-color: rgb(12, 12, 12);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+.NotifyHeader{
+    border-radius:10px;
+    background-color: #ff0000;
+    width:100%;
+    height:fit-content;
+    color: #e9e7e7;
+    padding:10px
+}
+
+.displayNotifyContainer{
+    background-color: rgb(12, 12, 12);
+    margin:10px;
+    padding-top: 10px;
+    height:350px;
+    overflow-y: scroll;
+}
+
+.displayNotifyContainer::-webkit-scrollbar {
+    width: 15px; /* Width of the scrollbar */
+  }
+  
+  .displayNotifyContainer::-webkit-scrollbar-track {
+    background-color: #5f5e5e4b; /* Color of the scrollbar track */
+  }
+  
+  .displayNotifyContainer::-webkit-scrollbar-thumb {
+    background-color: #be0f0f; /* Color of the scrollbar thumb */
+  }
+  
+  .displayNotifyContainer::-webkit-scrollbar-thumb:hover {
+    background-color: #ececec; /* Color of the scrollbar thumb on hover */
+  }
+
+.MiddleComp {
+    margin: 0 auto; /* Center horizontally */
+    background-color: #000000;
+    height: 85vh;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    
+  }
+  .middleHeader {
+    border-radius: 10px;
+    background-color: #000000;
+    width: 100%;
+    height: fit-content;
+    
+    padding: 10px;
+    
+}
+.NotifyHeaderTxt{
+    color: red;
+    animation: glow 1.5s ease-in-out infinite;
+}
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 5px red;
+    }
+    50% {
+        box-shadow: 0 0 20px red;
+    }
+    100% {
+        box-shadow: 0 0 5px red;
+    }
+}
+
+.userActivityContainer{
+    position: relative;
+    width:95%;
+   height: 85%;
+    margin-top: 2%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    padding: 5px;
+    background-color: rgb(22, 22, 22);
+    border-radius: 10px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.userActivityContainer::-webkit-scrollbar {
+    width: 15px; /* Width of the scrollbar */
+  }
+  
+  .userActivityContainer::-webkit-scrollbar-track {
+    background-color: #5f5e5e4b; /* Color of the scrollbar track */
+  }
+  
+  .userActivityContainer::-webkit-scrollbar-thumb {
+    background-color: #be0f0f; /* Color of the scrollbar thumb */
+  }
+  
+  .userActivityContainer::-webkit-scrollbar-thumb:hover {
+    background-color: #ececec; /* Color of the scrollbar thumb on hover */
+  }
+.RightButtonStack {
+    
+    /* Center horizontally */
+    display: block;
+    position: relative;
+    background-color: #000000;
+    border-radius: 10px;
+    height: fit-content;
+    padding-bottom: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+
+.btnStack{
+    border-radius:10px;
+    background-color: #ff0000;
+    width:290px;
+    height :50px;
+    margin-top:20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.contain{
+    display: grid;
+    grid-template-columns: 400px 400px 400px;
+    margin-top: 200px;
+    column-gap: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1250px;
+    background-color: rgb(117, 16, 16);
+
+}
+
+.content{
+    width: 400px;
+    height: 200px;
+    background-color: rgb(9, 184, 160);
+}
+.content1{
+    display: grid;
+    grid-template-columns: 350px;
+    grid-template-rows: 300px 300px;
+    row-gap: 20px;
+    width: 400px;
+    height: 500px;
+    background-color: rgb(9, 184, 160);
+}
+
+.content2{
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 200px;
+    background-color: rgb(6, 7, 7);
+}

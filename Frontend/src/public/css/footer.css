@@ -1,0 +1,57 @@
+.containerfooter{
+     
+    display: grid;
+    grid-template-columns: 25% 25% 25% 45%;
+    column-gap: 20px;
+  height:280px;
+  padding-bottom: 5px;;
+   
+}
+
+.child1{
+    color: rgb(190, 0, 0);
+    width: 35%;
+     
+     
+    padding-top: 50px;
+}
+.child2{
+    color: rgb(190, 0, 0);
+    width: 15%;
+     
+    padding-top: 50px;
+}
+
+.child12{
+    color: rgb(190, 0, 0);
+    width: 25%;
+     
+    padding-top: 50px;
+}
+
+.contentfoot{
+    text-align: left;
+    color: #efdede;
+}
+
+.background-video2{
+    position: absolute;
+   
+    width: 100%;
+    height: 45%;
+    object-fit:cover;
+
+    mask-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.278));
+  -webkit-mask-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.463));
+  }
+
+  .hugedmf{
+    font-size: 140px;
+    color: white;
+    font-family: 'Anurati',sans-serif;
+  }
+
+  .bigbig{
+    font-weight: 900;
+    color: red;
+  }

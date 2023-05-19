@@ -1,0 +1,93 @@
+.DPtop_text_form{
+    
+     
+    font-size: 50px;
+    color :red;
+    background-color: #aa3939;
+    width: 60vw;
+    margin-left: 20vw;
+    
+}
+
+
+
+.DPlabels{
+
+    text-align: center;
+    font-size: 20px;
+    
+
+}
+
+.DPadd_diet_plan_btn{
+    background-color: #aa3939;
+  border: none;
+  padding: 10px 20px;
+  color: #fff;
+  font-size: 16px;
+  /* text-align: center; */
+  text-transform: uppercase;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  margin-left: -5%;
+  
+
+}
+
+.DPadd_diet_btn_alignment{
+    text-align: center;
+    position: relative;
+    top : 30px;
+    left : 5%;
+
+}
+
+.DPinputs{
+    background-color: #f2f2f2;
+    border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  color: #333;
+  text-align: left;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.DPerror {
+
+ 
+  color: red;
+  font-weight: bold;
+  text-align:center;
+  bottom:200px;
+  font-size: 20px;
+  margin-top: 10vw;
+  
+  
+}
+
+.DPtopSpace{
+  margin-top: 100px;
+}
+
+
+.DPstartedd{
+   width: 90vw;
+  margin-left: 5vw;
+  
+   
+}
+
+.headdeitx{
+  color: #b60000;
+  font-size: 50px;
+  margin-top: 200px;
+  width: 60vw;
+  margin-left: 15vw;
+   
+ 
+
+}

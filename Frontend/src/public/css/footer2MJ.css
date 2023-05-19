@@ -1,0 +1,105 @@
+.dmf{
+
+  font-family: 'Anurati';
+  font-size: 130px;
+  line-height: 200px;
+/* identical to box height */
+
+letter-spacing: 0.145em;
+
+color: #FFFFFF;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
+
+
+
+
+.cpy{
+
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 28px;
+letter-spacing: 0.145em;
+
+
+color: #FFFFFF;
+}
+
+
+.cont1{
+  margin-left: 30;
+}
+
+
+.Footer{
+  display:grid;
+  grid-template-columns: 280px 280px 280px 280px ;
+  column-gap: 100px;
+  row-gap: 20px;
+
+}
+.container2{
+
+font-style: normal;
+font-weight: 700;
+font-size: 22px;
+line-height: 37px;
+letter-spacing: 0.145em;
+
+
+color: #FFFFFF;
+}
+
+.address{
+
+
+font-style: normal;
+font-weight: 500;
+font-size: 13px;
+line-height: 10px;
+letter-spacing: 0.1em;
+
+color: #FFFFFF;
+
+}
+
+.text{
+  text-align: left;
+}
+
+.con{
+
+
+font-weight: 900;
+font-size: 20px;
+line-height: 20px;
+letter-spacing: 0.145em;
+
+color: #FFFFFF;
+}
+.fdb{
+ 
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 10px;
+  letter-spacing: 0.1em;
+  
+  color: #FFFFFF;
+
+}
+
+.container4{
+  
+ font-style: normal;
+ font-weight: 700;
+ font-size: 22px;
+ line-height: 37px;
+ letter-spacing: 0.145em;
+}
+.Footer{
+  background-color: rgb(17, 12, 2);
+}

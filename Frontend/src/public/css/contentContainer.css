@@ -1,0 +1,27 @@
+.App{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: 'ty2.png';
+    background-color: transparent;
+    opacity: 1;
+    background-size: cover;
+    background-position: center;
+    
+}
+.contentContainer{
+    flex:1 0 auto;
+    padding-bottom: 2%;
+    width: 100%;
+    background-image: 'ty2.png';
+    background-color: 'ty2.png';
+    opacity: 1;
+    background-size: cover;
+    background-position: center;
+ 
+}
+
+body{
+    
+    font-family: 'inter',  sans-serif;
+}

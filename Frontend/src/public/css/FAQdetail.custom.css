@@ -1,0 +1,50 @@
+body{
+    background-color: rgb(0, 0, 0);
+    font-family: inter, sans-serif;
+}
+
+.FAQDetails{
+    color: aliceblue
+    
+}
+
+.det{
+    
+    padding-bottom:90px;
+    padding-top: 60px;
+    margin-top: 90px;
+    margin-bottom: 90px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 900px;
+    background-color: rgba(255, 255, 255, 0.071);
+    border-radius: 20px;
+    font-size: 30px; 
+    color: #959595;   
+}
+.name{
+    font-weight: 100;
+    color: #b50000;
+    font-size: 30px;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: rgba(0, 0, 0, 0.774);
+}
+
+.ans{
+    padding-top: 20px;
+    color: white
+    ;
+}
+
+ .material-symbols-outlined:hover{
+    background-color: #b50000;
+
+ }
+ .button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: blue;
+    color: white;
+    text-decoration: none;
+  }

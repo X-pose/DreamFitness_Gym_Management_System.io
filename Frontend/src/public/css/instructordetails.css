@@ -1,0 +1,87 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .table th,
+  table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  table th {
+    font-weight: bold;
+  }
+  
+  table img {
+    max-width: 100px;
+    max-height: 100px;
+  }
+  
+
+  
+  .delbtnins {
+    background-color: #C0261C; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+  
+  .updbtnins {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+  
+
+  input[type="text"],
+  input[type="number"],
+  input[type="file"] {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+  }
+  
+  input[type="file"] {
+    padding: 3px;
+  }
+  
+  input[type="file"]::-webkit-file-upload-button {
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  button,
+  input[type="file"]::-webkit-file-upload-button {
+    transition-duration: 0.3s;
+  }
+  
+  button:hover,
+  input[type="file"]::-webkit-file-upload-button:hover {
+    opacity: 0.8;
+  }
+.titleourcrew{
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+  

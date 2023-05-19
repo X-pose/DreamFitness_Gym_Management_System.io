@@ -1,0 +1,50 @@
+.titlprgform{
+    margin-top: 100px;
+    color: red;
+    font-size: 55px;
+    text-align: center;
+}
+ 
+.form-controlTrack{
+    margin-top: 200px;
+    background-color: rgba(240, 248, 255, 0.171);
+    width: 60vw;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+    padding-top: 100px;
+    
+   
+}
+
+ 
+
+ 
+.sbmtbtntrack{
+    background-color: red;
+    color: white;
+    margin-bottom: 60px;
+}
+.sbmtbtntrack:hover{
+    background-color: rgba(31, 3, 3, 0.616);
+    color: white;
+   
+}
+
+
+.sbmtbtntrack2{
+     
+        background-color: rgb(0, 0, 0);
+        color: white;
+        margin-bottom: 80px;
+     
+}
+
+.descriptprgtrackform{
+    color: #f7f7f77e;
+    margin-top: 90px;
+    width: 60vw;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify;
+}

@@ -1,0 +1,65 @@
+.DPtable{
+
+    border-collapse: collapse;
+    height: 100%;
+    width: 100%;
+    top : 100px; 
+    border-style: hidden;
+    border-radius: 20px;
+     background-color: #cd080800;
+    
+}
+
+
+ 
+
+.DPthtd{
+    text-align: center;
+    width: 900px;
+    height:25px;  
+}
+
+.DPtab{
+   
+    height: 70px;
+     margin-left: 20vw;
+     width: 60vw;
+     margin-bottom: 200px;
+     
+    
+    
+}
+
+
+/* td{
+    width:400px;
+    height :10px;
+} */
+
+/* .table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+   */
+  .DPdelbtn {
+    background-color: #cd0808;
+    color: white;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .DPupdatebtn{
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .showTable{
+    padding:10px
+  }
+ 
+
+ 
+  

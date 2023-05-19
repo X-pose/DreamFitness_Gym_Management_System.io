@@ -1,0 +1,113 @@
+.topiccc{
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.instructor-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.instructor-card {
+  width: 300px;
+  padding: 20px;
+  margin: 10px;
+  background-color: #f7f7f7;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.instructor-name {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.instructor-description {
+  margin-bottom: 10px;
+}
+
+.instructor-quote {
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.instructor-certification {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.instructor-specialties {
+  margin-bottom: 10px;
+}
+
+.instructor-specialty {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.instructor-specialty-label {
+  width: 120px;
+  font-weight: bold;
+}
+
+.instructor-specialty-value {
+  flex-grow: 1;
+}
+
+.instructor-image {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.instructor-image img {
+  width: 150;
+  height: 300;
+  border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  .instructor-card {
+    width: 100%;
+  }
+}
+
+/*_____________________________________________________________________________________*/
+.mainblockinsdetails{
+  display: grid;
+  grid-template-columns: 600px 600px;
+  column-gap: 20px;
+  width: 1220px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 520px;
+  margin-top: 70px;
+  margin-bottom: 70px;
+  background-color: rgba(240, 248, 255, 0.291);
+  border-radius: 20px;
+}
+
+.rightpanel{
+  text-align: justify;
+  margin-top:80px;
+ width: 600px;
+}
+
+.imagepanell{
+  width: 600px;
+}
+
+.imageinstruc{
+   height: 520px;
+
+
+   
+}
+
+
+.onlyview1{
+  font-size: 50px;
+  color: white;
+}

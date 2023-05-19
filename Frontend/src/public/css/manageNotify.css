@@ -1,0 +1,22 @@
+
+
+.headerFont{
+ text-align: center;   
+ 
+}
+
+.headerFont-2{
+    text-align: center;  
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.addNotifyForm{
+    background-color: rgb(58, 59, 59);
+    width:100%g!important;
+    padding:10px;
+}
+
+.modelCustoized{
+    width:40%!important;
+}

@@ -1,0 +1,62 @@
+.body{
+    font-family: "inter",sans-serif;
+}
+.topic{
+    margin-top: 90px;
+    
+    top: 50px;
+    color: aliceblue;
+     
+    font-style: normal;
+    font-weight: 600;
+    font-size: 60px;
+     
+    text-align: center;
+}
+
+
+.contad{
+
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    
+
+}
+
+.Adminpanel{
+    
+    text-shadow: 0px 9px 4px rgba(0, 0, 0, 0.25);
+}
+
+.rectangle1{
+    width: 800px;
+    height: 67px;
+    margin-top: 40px;
+    transition-duration: 0.5s;
+     
+    background: rgba(79, 76, 84, 0.75);
+    
+}
+.rectangle2{
+    width: 800px;
+    height: 67px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    transition-duration: 0.5s;
+     
+    background: rgba(79, 76, 84, 0.75);
+}
+
+.wed{
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 50px;
+    color: #ffffff;
+        
+}
+
+ 

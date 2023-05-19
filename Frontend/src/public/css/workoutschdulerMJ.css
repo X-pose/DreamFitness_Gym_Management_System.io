@@ -1,0 +1,101 @@
+.Nameone{
+    margin-top: 100px;
+    color: aliceblue;
+    font-weight: 900;
+    text-align: center;
+}
+
+
+
+.cus{
+    margin-top: 100px;
+}
+ 
+
+
+
+
+
+
+
+.cusname{
+     
+
+    color: #ffffff;
+    text-align: center;
+    font-size: 16px;
+}
+
+
+
+
+
+table{
+
+  margin-top: 50px;
+  border-collapse: collapse;
+  border: 2px solid white;
+  margin-left: auto;
+  margin-right: auto;
+  width: 700px;
+  background-color: #ffffff57;
+  color: white;
+ 
+}
+
+th ,td{
+  text-align: left;
+  width: 100px;
+  
+}
+
+.tab{
+  margin-top: 50px;
+  height: 70px;
+
+  width: 80%;
+  
+}
+
+
+td{
+  width:400px;
+  height :10px;
+}
+
+.table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.delbtn {
+  background-color: #cd0808;
+  color: white;
+  border-radius: 25px;
+  border: none;
+}
+
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+  }
+  
+  .minus{
+    background-color: #f2f2f2;
+    color: #ff0000;
+  }
+
+
+  .ename{
+    margin-right: 150px;
+    color: #ffffff;
+  }
+ 
+  
+  .createexer{
+    color: white;
+    font-weight: 700;
+    margin-bottom: 200px;
+  }

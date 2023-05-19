@@ -1,0 +1,125 @@
+.Nameone{
+    margin-top: 100px;
+    color: aliceblue;
+    font-weight: 900;
+    text-align: center;
+}
+
+
+
+
+.cus{
+    margin-top: 100px;
+}
+ 
+
+
+.onlyview{
+  color: white;
+  width: auto;
+  height: auto;
+}
+
+
+
+
+.cusname{
+     
+
+    color: #ffffff;
+    text-align: center;
+    font-size: 16px;
+}
+
+table {
+  margin-top: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1100px;
+  height: 150px;
+  background-color: #4F4C54;
+  text-align: center;
+  border: 10px solid #4F4C54;
+  border-collapse: collapse;
+}
+
+table tr {
+  line-height: 50px;
+}
+
+table th,
+table td {
+  padding: 10px;
+  color: #FFF;
+  border: 1px solid #FFF;
+}
+
+table th {
+  background-color: #2E2B32;
+}
+
+table td {
+  background-color: #3E3B42;
+}
+
+table td:hover {
+  background-color: #6B6870;
+}
+  
+  .delbtn{
+    background-color: #ff0000;
+    color: #ffffff;
+  }
+
+  .updbtn{
+    background-color: #11a444;
+  }
+  
+  
+  th {
+    
+    background-color: #f2f2f2;
+    color: #333;
+  }
+  
+  tr:nth-child(even) {
+     color: #ffffff;
+  }
+  tr:nth-child(odd) {
+    color: #ffffff;
+
+  }
+  
+  .addnew{
+    text-align: center;
+    background-color: #ffffff;
+    color: #000;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+  }
+  
+  .minus{
+    background-color: #f2f2f2;
+    color: #ff0000;
+  }
+
+
+  .ename{
+    margin-right: 150px;
+    color: #ffffff;
+  }
+ 
+  
+  .createexer{
+    color: white;
+    font-weight: 700;
+    margin-bottom: 200px;
+  }
+  
+
+  

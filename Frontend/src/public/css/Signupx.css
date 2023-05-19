@@ -1,0 +1,51 @@
+.signupp-form{
+
+    
+    background-color: rgba(0, 0, 0, 0.856);
+    
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+    scale: 80%;
+
+}
+
+.notRobortLabel{
+    color: black;
+}
+.notRobortSignup{
+    width: fit-content;
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-top: 1px;
+    padding-right: 1px;
+    background-color: aliceblue;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+}
+
+.form-groupReg{
+    margin-top: 5%;
+    
+}
+
+.orCss{
+    margin-top: 10px;
+    color: rgb(255, 255, 255);
+}
+
+.signupbodyback{
+    padding-top: 40px;
+    padding-bottom: 50px;
+    background: url(ty2.png);
+    mask-image: linear-gradient(to 80% to bottom, transparent, black);
+ 
+}
+.Signup-header{
+    margin-top: 60px;
+    margin-bottom: 50px;
+    color: red
+    ;
+}
