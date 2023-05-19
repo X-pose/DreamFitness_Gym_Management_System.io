@@ -1,1 +1,0 @@
-//This file is the enrty point to the react web app

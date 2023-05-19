@@ -1,1 +1,0 @@
-//This class handles API calls to the server from the react application

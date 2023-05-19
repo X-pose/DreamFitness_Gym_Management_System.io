@@ -1,1 +1,0 @@
-//Include frontend javascript validations and other related javascripts in here
