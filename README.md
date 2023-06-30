@@ -13,7 +13,9 @@
 
 #### Brief Description of Project -
 
-DREAM FITNESS web application is a comprehensive fitness tool that offers users a wide range of features to help them achieve their fitness goals. It includes a user management system, workout scheduler, exercise library, instructor library, diet planner, progress tracker, frequently asked questions section, and feedback/notification system. Users can easily create an account, schedule workouts, access detailed exercise instructions and videos, select a certified instructor, plan and track their meals, monitor their fitness progress, get answers to common questions, and provide feedback to the gym. The application is designed to provide a seamless and personalized fitness experience for users.
+The DREAM FITNESS web application is an all-encompassing fitness tool that provides users with a diverse array of features, empowering them to successfully accomplish their fitness objectives. This comprehensive platform boasts an array of functionalities, including a sophisticated user management system, a meticulously designed workout scheduler, an extensive exercise library, a comprehensive instructor library, an intuitive diet planner, a robust progress tracker, an informative frequently asked questions section, and a reliable feedback/notification system.
+
+With the DREAM FITNESS web application, users can effortlessly create an account, seamlessly schedule workouts, access detailed exercise instructions and videos, handpick a certified instructor, effectively plan and track their meals, closely monitor their fitness progress, obtain answers to commonly asked questions, and provide invaluable feedback to the gym. Our application has been meticulously crafted to deliver a flawless and tailor-made fitness experience for each and every user, ensuring their journey toward optimal health and well-being is both seamless and highly personalized.
 
 
 #### Technologies used - MERN STACK
