@@ -1,48 +1,50 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Login from './pages/Login';
-import SignUp from './pages/SignUp';
-import AccountDisplayUpdate from './pages/userAccountDetail';
-import UserAccountDisplay from './pages/userAccount';
+
+import Login from './pages/Login.jsx';
+import SignUp from './pages/SignUp.jsx';
+import AccountDisplayUpdate from './pages/userAccountDetail.jsx';
+import UserAccountDisplay from './pages/userAccount.jsx';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import '../public/css/contentContainer.css'
-import Homepage from './pages/Home';
-import ChangPlan from './pages/changePlan';
-import AdminMainPage from './pages/AdminMainPage';
+import Homepage from './pages/Home.jsx';
+import ChangPlan from './pages/changePlan.jsx';
+import AdminMainPage from './pages/AdminMainPage.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import PleaseLogin from './components/pleaseLoginPopUp';
-import AdminViewUserDetails from './pages/AdminViewUser';
+import AdminViewUserDetails from './pages/AdminViewUser.jsx';
 
 
-import ExerciseDemoAdmin from "./pages/exerciseDemoAdmin";
-import ExerciseDemoHome from "./pages/exerciseDemoHome";
+import ExerciseDemoAdmin from "./pages/exerciseDemoAdmin.jsx";
+import ExerciseDemoHome from "./pages/exerciseDemoHome.jsx";
 
 
 
-import WorkoutSchedulerCustom from './pages/workoutschedulrCustom';
-import Addworkout from './pages/workoutADD';
-import WorkoutSchdulerAdmin from './pages/WorkSchedulerAdmin'
+import WorkoutSchedulerCustom from './pages/workoutschedulrCustom.jsx';
+import Addworkout from './pages/workoutADD.jsx';
+import WorkoutSchdulerAdmin from './pages/WorkSchedulerAdmin.jsx'
 
-import ProgressTracker from './pages/ProgressTracker';
-import ProgressForm from './pages/ProgressForm';
-import Graph from './pages/ProgressGraph';
-import Workoutlog from './pages/WorkoutLog';
+import ProgressTracker from './pages/ProgressTracker.jsx';
+import ProgressForm from './pages/ProgressForm.jsx';
+import Graph from './pages/ProgressGraph.jsx';
+import Workoutlog from './pages/WorkoutLog.jsx';
 
 
-import AdminInstructor from './pages/Admininstructorpanel';
-import AddInstructor from './pages/AddInstructor';
-import EditInstructor from './pages/EditInstructor';
-import ViewOnlyInstructors from './pages/ViewOnlyInstructors';
+import AdminInstructor from './pages/Admininstructorpanel.jsx';
+import AddInstructor from './pages/AddInstructor.jsx';
+import EditInstructor from './pages/EditInstructor.jsx';
+import ViewOnlyInstructors from './pages/ViewOnlyInstructors.jsx';
 
-import AdminDietPlan from './pages/AdminDietPlan';
-import UserDietPlan from './pages/UserDietPlan'
-import FAQADMIN from './pages/FAQADMIN';
-import FAQcustom from './pages/FAQcustom';
-import FAQinadmin from './pages/FAQinadmin';
+import AdminDietPlan from './pages/AdminDietPlan.jsx';
+import UserDietPlan from './pages/UserDietPlan.jsx'
+import FAQADMIN from './pages/FAQADMIN.jsx';
+import FAQcustom from './pages/FAQcustom.jsx';
+import FAQinadmin from './pages/FAQinadmin.jsx';
+
 
 import FeedbackForm from './components/FeedbackAdminPage';
-import FeedbackView from './components/FeedbackView';
-import FeedbackFormz from './pages/FeedbackForm';
+
+import FeedbackFormz from './pages/FeedbackForm.jsx';
 import FeedbackAdmin from './components/FeedbackAdminPage';
 import UpdateFeedback from './components/updatefeedback'
 import DownloadPDF from './components/userDetailsPDF';
