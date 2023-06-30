@@ -82,5 +82,16 @@ app.use('/api/feedbacks', feedbackRoutes)
 app.use('/api/allfeedback', allFeedbacksRoutes)
 
 
+
+app.use(express.static(path.join(__dirname, 'frontEnd')));
+// Serving the 'index.html' file for all requests
+app.get('*', (req, res) => {
+  console.log("index.ejs function is running-pahse1")
+  res.sendFile(path.join(__dirname, 'frontEnd', 'index.html'));
+  console.log("index.ejs function is running")
+});
+
+
+
 module.exports = app;
 console.log('Exporting app instance...');
