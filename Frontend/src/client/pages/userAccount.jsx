@@ -95,8 +95,8 @@ function UserAccountDisplay() {
           <h1><b>{userDetails?.userName}</b></h1>
           <p>{userDetails?.email}</p>
         </div>
-
-        <div className="content-container">
+      <div className='content_container'>
+      
           <div className="sub-containerLeft">
             <div className='accountCompletion'>
               <div className="progressbar">
@@ -198,11 +198,11 @@ function UserAccountDisplay() {
                   </div>
                 </div>
               </div>
-              <div className='middleAlign'>
+              <div className='middleAlignAddress'>
                 <div className='divFields'>
                   <label className='label-align'>Address</label>
 
-                  <div className="middleRoundedRect">
+                  <div className="middleRoundedRectAddress">
                     <span className="value">{userDetails?.address}</span>
                   </div>
                 </div>
@@ -233,11 +233,13 @@ function UserAccountDisplay() {
 
 
           </div>
-          <div className='real_sub_containerRight'>
+          <div className="sub-containerRight">
+            
             <div>
               <button className='Logoutbtn' onClick={logOutUser}>Logout</button>
             </div>
-            <div className="sub-containerRight"><h1 className='accCmpltLabel'>Notifications</h1>
+            <div className="NotificationPanel">
+              <h1 className='accCmpltLabel'>Notifications</h1>
               <div className="displayNotify">
                 {results.length === 0 ? (
                   <p>No notifications to display</p>
@@ -251,18 +253,18 @@ function UserAccountDisplay() {
                               <div className='NotifyRowHeaderMain'>
                                 <div className='NotifyRowHeader'>
                                   <div className='NotifyHeadLeft'>
-                                    <h6>For: {notification.Destination}</h6>
+                                    <h6 className='NotifyFontFirst'>For: {notification.Destination}</h6>
                                   </div>
-                                  <div className='NotifyHeadRight'><h8 className='fontsStyleRight'> Date: {notification.Date}</h8></div>
+                                  <div className='NotifyHeadRight'><h8 className='NotifyFontFirst'> Date: {notification.Date}</h8></div>
 
 
 
                                 </div>
-                                <div className='NotifyRowTitle'><h8>{notification.Title}</h8></div>
+                                <div className='NotifyRowTitle'><h8 className='NotifyFontTitle'>{notification.Title}</h8></div>
                               </div>
 
                               <div className='NotifyRowContent'>
-                                <h8>{notification.Description}</h8>
+                                <h8 className = "NotifyFontContent">{notification.Description}</h8>
                               </div>
 
 
@@ -274,22 +276,18 @@ function UserAccountDisplay() {
                   </ul>
                 )}
               </div>
-
-
             </div>
             <div className='updBtnClass'>
-              <a href='/MyAccount/update'>
-                <button className='updBtn'>Update My details</button>
-              </a>
+            <a href='/MyAccount/update'>
+              <button className='updBtn'>Update My details</button>
+            </a>
 
               <DeleteAccountConfirm />
-            </div>
-
           </div>
 
-        </div>
 
-
+          </div>
+      </div>                       
       </div>
 
     </div>

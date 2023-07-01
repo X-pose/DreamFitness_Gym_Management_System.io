@@ -1,35 +1,38 @@
 .NotifyRowContainer{
 
     display:grid;
-    grid-template-rows: 50px 45px;
+    grid-template-rows: 35% 50%;
     padding: 5px;
-    
+    border-radius: 10px;
     width:90%;
-    height: 105px;
+    height: fit-content;
     margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
-    background-color: rgb(158, 158, 155);
+    background-color: #181818;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 .NotifyRowHeaderMain{
     display:grid;
-    grid-template-rows: 30% 70%;
+    grid-template-rows: 40% 60%;
     row-gap: 5px;
-    height:60px;
+    height:fit-content;
+   
 }
 
 .NotifyRowTitle{
     height:fit-content;
     padding: 1px;
+    text-align: left;
     border-radius: 5px;
-    background-color: rgb(99, 98, 98);
+    
+
 }
 .NotifyRowHeader{
     display:grid;
     height: fit-content;
-    
+    margin-bottom: 30px;
     grid-template-columns: 50% 50%;
     
 }
@@ -37,6 +40,7 @@
 .NotifyHeadLeft{
     text-align: left;
     padding-left: 5px;
+  
    
     
 }
@@ -57,7 +61,40 @@
 .NotifyRowContent{
     border-radius: 5px;
     padding: 2px;
-    background-color: rgb(255, 255, 255);
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0);
     overflow-y: scroll;
     overflow-x: hidden;
+}
+
+
+.NotifyRowContent::-webkit-scrollbar {
+    width: 5px; /* Width of the scrollbar */
+  }
+  
+  .NotifyRowContent::-webkit-scrollbar-track {
+    background-color: #5f5e5e00; /* Color of the scrollbar track */
+  }
+  
+  .NotifyRowContent::-webkit-scrollbar-thumb {
+    background-color: #be0f0f; /* Color of the scrollbar thumb */
+    border-radius: 10px;
+  }
+  
+  .NotifyRowContent::-webkit-scrollbar-thumb:hover {
+    background-color: #ececec; /* Color of the scrollbar thumb on hover */
+  }
+
+.NotifyFontFirst{
+    color: #be0f0f;
+    font-size: larger;
+}
+.NotifyFontTitle{
+    color: #ffffff;
+    
+}
+
+.NotifyFontContent{
+    color: #787878;
+   
 }
