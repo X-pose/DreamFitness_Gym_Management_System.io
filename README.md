@@ -20,5 +20,37 @@ With the DREAM FITNESS web application, users can effortlessly create an account
 
 #### Technologies used - MERN STACK
 
+**Server starting methods:**
+
+- Frontend: Navigate to the frontend folder and open an integrated terminal there.
+- Backend: Navigate to the backend/src folder and open an integrated terminal there.
+
+To start the webpack development server, type npm start.
+
+To create the development build, type npm run dev.
+
+To build the production version, type npm build.
+
+To run the backend, type npm start.
+
+**Usage guide:**
+
+- Always use the development server for testing. The production build should only be used when the app is ready for deployment.
+
+- Note that only the production build can be served via the server side.
+
+- The webpack development server is configured to run on port 3000.
+
+- The backend server is configured to run on port 4000.
+
+- To access the production build using the backend, type http://localhost:4000/ in your browser.
+
+**Once you have created the production version:**
+
+- Move the content (build files) from the build folder in the frontend to the frontend folder in the backend file system.
+
+Good luck!
+
+
  
 
