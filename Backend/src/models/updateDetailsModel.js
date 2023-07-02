@@ -21,6 +21,7 @@ const updateSchema = new mongoose.Schema({
   BMI : { type: Number, required: false },
   PARQ_agreeArray : { type: {Boolean}, required: false }, //Boolean array here
   goal : { type: String, required: false },
+  myFitnessPlan : { type: String, required: false },
   proPic : { type: String, required: false },
   age:{type:Number, required:false},
   accountStatus:{type:Number, required:false}

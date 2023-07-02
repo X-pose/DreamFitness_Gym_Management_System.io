@@ -8,13 +8,15 @@ import '../../public/css/changePlan.css'
 
 
 
+
 function ChangePlan() {
 
-  const [myFitnessPlan, setPlan] = useState('')
+  const [myFitnessPlan, setPlan] = useState('Basic')
 
 
-  const SubmitBTN = async () => {
+  const SubmitBTN = async (e) => {
 
+    e.preventDefault();
     try {
       const updateUser = {
         myFitnessPlan
@@ -32,10 +34,19 @@ function ChangePlan() {
 
       if (response.ok) {
 
-        console.log('User myFitnessPlan updated successfully!');
+        toast.success('Membership plan updated succefully!', {
+          position: toast.POSITION.TOP_RIGHT
+        });
+        
+        setTimeout(function() {
+          window.location.href = '/MyAccount'
+        }, 3000);
+        setTimeout();
 
-
-
+        console.log(json.myFitnessPlan);
+        setPlan(json.myFitnessPlan);
+        
+        
       } else {
 
         console.error('Failed to update user details:', json.error);
@@ -54,15 +65,13 @@ function ChangePlan() {
         <div>
           <h2>Choose Your Plan</h2>
           <form onSubmit={SubmitBTN}>
-            <label for="plan">Select a Plan:</label>
-            <select id="plan" name="plan" onChange={(e) => setPlan(e.target.value)}>
-              <option value="basic">Basic</option>
-              <option value="intermediate">Intermediate</option>
-              <option value="expert">Expert</option>
+            <label htmlFor="plan">Select a Plan:</label>
+            <select id="plan" name="plan" onChange={(e) => setPlan(e.target.value)} value={myFitnessPlan}>
+              <option value="Basic">Basic</option>
+              <option value="Intermediate">Intermediate</option>
+              <option value="Expert">Expert</option>
             </select>
-          </form>
-
-          <div className="Buttons">
+            <div className="Buttons">
             <div className='leftBtn'>
               <button className="greenBtn" type="submit">Update My Plan</button>
             </div>
@@ -71,13 +80,16 @@ function ChangePlan() {
                 <button className="redBtn" type="button">Cancel</button>
               </a>
             </div>
+            </div>
+          </form>
 
+          
 
           </div>
         </div>
       </div>
 
-    </div>
+   
   )
 }
 

@@ -211,6 +211,7 @@ exports.updateFitPlan = async(req,res)=>{
     
     const updateBody = {
       myFitnessPlan : req.body.myFitnessPlan,
+     
     }
 
     const updatedPlan = await updUser.findOneAndUpdate(
@@ -218,11 +219,12 @@ exports.updateFitPlan = async(req,res)=>{
       {userName :sessionHandler.getSessionName()},
       updateBody,
       {new:true}
-    
+      
     );
+    console.log("Plan is updating into" + updatedPlan)
     res.status(200).json(updatedPlan);
     console.log("Plan updated!")
-  } catch (error) {
+  } catch (err) {
     console.error(err);
     res.status(500).json({ message: 'Internal server error at delete user' });
   }
