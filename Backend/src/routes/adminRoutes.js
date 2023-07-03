@@ -8,6 +8,10 @@ router.get('/api/getAddedUsers', (req,res)=>{
     adminAccount.searchUserAccounts(req,res);
   })
 
+  router.post('/api/addNewAdmin',(req,res)=>{
+    
+    adminAccount.addNewAdmin(req,res);
+  })
   
 //Exports Router
 module.exports = router;
