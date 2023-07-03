@@ -73,7 +73,9 @@ router.put('/api/updateMypaymentDetails', (req,res)=>{
 })
 
 router.put('/api/myfitnessPlan',(req,res)=>{
+    console.log("UpdatePlan API endpoint from server running");
     userAccountController.updateFitPlan(req,res);
+    
 })
 
 //Exports Router

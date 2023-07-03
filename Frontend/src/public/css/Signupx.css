@@ -1,8 +1,9 @@
-.signupp-form{
+.signup-form{
 
     
-    background-color: rgba(0, 0, 0, 0.856);
-    
+    background-color: rgba(0, 0, 0, 0.459);
+    border: 1px solid #f10000;
+    border-width: 5px;
     width: 500px;
     margin-left: auto;
     margin-right: auto;
@@ -32,9 +33,24 @@
 }
 
 .orCss{
-    margin-top: 10px;
+    margin-top: 30px;
     color: rgb(255, 255, 255);
+    margin-bottom: 50px;
 }
+
+.RegBtn{
+    margin-top: 50px;
+    width: 80%;
+    margin-bottom: 20px;
+    color: rgb(248, 0, 0) !important;
+    font-weight: bold;
+    font-size: large;
+}
+.RegBtn:hover{
+    color: black !important;
+
+}
+
 
 .signupbodyback{
     padding-top: 40px;
@@ -48,4 +64,17 @@
     margin-bottom: 50px;
     color: red
     ;
+}
+
+.googleSignup{
+    
+    color: rgb(0, 0, 0);
+    width: 80%;
+    background-color: #cccccc9d  !important;
+    font-weight: bold;
+    font-size: large;
+}
+
+.googleSignup:hover{
+    background-color: rgb(255, 255, 255) !important;
 }

@@ -1,55 +1,87 @@
 .square-form {
-    background-color: #f2f2f2;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 20px;
-    width: 300px;
-    margin: 0 auto;
-  }
-  
-  h2 {
-    text-align: center;
-    margin-top: 0;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  label {
-    font-weight: bold;
-  }
-  
-  select {
-    margin-bottom: 10px;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #fff;
-  }
-  
-  .buttons {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  button {
-    padding: 8px 15px;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
-  .green-button {
-    background-color: green;
-    color: #fff;
-    border: none;
-  }
-  
-  .red-button {
-    background-color: red;
-    color: #fff;
-    border: none;
-  }
-  
+  display: grid;
+  grid-template-rows: 75% 25%;
+  background-color: #64646459;
+  border: 1px solid #f10000;
+  border-radius: 5px;
+  padding: 20px;
+  width: 400px;
+  margin: auto;
+  height: fit-content;
+  margin-top: 20vh;
+  color: #ffffff;
+
+}
+
+h2 {
+  text-align: center;
+  margin-top: 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: bold;
+}
+
+select {
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #464646;
+  color: #ffffff;
+}
+
+.Buttons {
+  display: grid;
+  grid-template-columns: 47.5% 47.5%;
+  column-gap: 5%;
+  margin-top: 10px;
+
+
+}
+
+
+.greenBtn {
+  background-color: rgb(0, 0, 0) !important;
+  color: #fff;
+  border: none;
+  height: 50px;
+  width: 95%;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 10px !important;
+}
+.greenBtn:hover{
+  background-color: #f10000 !important;
+}
+
+.redBtn {
+  background-color: rgb(143, 3, 3);
+  color: #fff;
+  border: none;
+  height: 50px;
+  width: 95%;
+  margin: 5px;
+  padding: 5px;
+  text-decoration: none;
+  border-radius: 10px;
+}
+
+.redBtn:hover{
+  background-color: #f10000 !important;
+}
+
+.leftBtn {
+  width: 100%;
+
+}
+
+.rightBtn {
+  width: 100%;
+}
+

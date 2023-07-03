@@ -88,7 +88,7 @@ app.use(express.static(path.join(__dirname, 'frontEnd')));
 app.get('*', (req, res) => {
   console.log("index.ejs function is running-pahse1")
   res.sendFile(path.join(__dirname, 'frontEnd', 'index.html'));
-  console.log("index.ejs function is running")
+  
 });
 
 

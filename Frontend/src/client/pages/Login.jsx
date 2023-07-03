@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {gapi} from 'gapi-script'
+import { gapi } from 'gapi-script'
 import '../../public/css/Login.css';
 import { useState, useEffect } from 'react';
 import Cookies from 'js-cookie';
@@ -15,11 +15,11 @@ const clientId = "796411994962-2uhaa7a0obchg0ukk0oirgor4a56ghlh.apps.googleuserc
 
 function Login() {
 
-  useEffect(() =>{
-    function start(){
+  useEffect(() => {
+    function start() {
       gapi.client.init({
-        clientId : clientId,
-        scope:''
+        clientId: clientId,
+        scope: ''
       })
     };
 
@@ -34,99 +34,104 @@ function Login() {
     setPsw(e.target.value);
   };
 
-  const loginSubmit = async(e)=>{
+  const loginSubmit = async (e) => {
     e.preventDefault();
 
-    if (psw.length == 0) {
-      setError('Please enter your password');
+    if (psw.length < 8) {
+
+      var charNo = 8 - psw.length;
+      toast.warning('You are missing ' + charNo + ' characters in your password!', {
+        position: toast.POSITION.TOP_RIGHT
+      });
       return;
     }
 
-    const logUser = {userName,psw}
-    const response = await fetch('/api/loginformdata',{
-        method: 'POST',
-        body: JSON.stringify(logUser),
-        headers:{
-            'Content-Type' : 'application/json'
-        }
+    const logUser = { userName, psw }
+    const response = await fetch('/api/loginformdata', {
+      method: 'POST',
+      body: JSON.stringify(logUser),
+      headers: {
+        'Content-Type': 'application/json'
+      }
     })
 
     const json = await response.json()
-    if(!response.ok){
-        setError(json.Error)
-        toast.error('User not found. Please try again', {
-          position: toast.POSITION.TOP_RIGHT
-          });
+    if (!response.ok) {
+      setError(json.Error)
+      toast.error('Login credentials are invalid. Please try again', {
+        position: toast.POSITION.TOP_RIGHT
+      });
     }
-    if(response.ok){
-      if(json === 'Admin'){
-        toast.success('Logged in successfully !', {
+    if (response.ok) {
+      if (json === 'Admin') {
+        toast.success('Wellcome, '+ userName+ '!', {
           position: toast.POSITION.TOP_RIGHT
         });
-        
-       
-        
+
         console.log("Cookies has been created. Passing alpha : " + Cookies.get('sessionName'))
 
         setError(null)
-        console.log('User logged in', json)
-        setTimeout(function() {
+        console.log('AdminUser logged in', json)
+        setTimeout(function () {
           window.location.href = '/AdminMainPage'
         }, 2500);
-        setTimeout();
-      }else{
+
+      
+
+      } else {
         toast.success('Logged in successfully !', {
           position: toast.POSITION.TOP_RIGHT
         });
-        const sessionName = response.headers.get('sessionName');
-        
-        console.log("Cookies has been created. Passing alpha : " + Cookies.get('sessionName'))
+
+        console.log("Cookies has been created: " + Cookies.get('sessionName'))
 
         setError(null)
+
         console.log('User logged in', json)
-        setTimeout(function() {
+        
+        setTimeout(function () {
           window.location.href = '/MyAccount'
         }, 2500);
-        setTimeout();
+      
       }
-          
+
     }
   }
-  
+
   return (
     <div className='bodyoflogin'>
 
       <div>
-      <ToastContainer autoClose={1500}/>
-    <div className="login-form">
-          
-      <form onSubmit={loginSubmit}>
-        <div className="login-header">
-          <h1 className='logtxt'>LOGIN</h1><br/>
-          <p className='paralogin'>Login to access to your account and use our features</p>
+        <ToastContainer autoClose={1500} />
+        <div className="login-form">
+
+          <form onSubmit={loginSubmit}>
+            <div className="login-header">
+              <h1 className='logtxt'>LOGIN</h1><br />
+              <p className='paralogin'>Login to access to your account and use our features</p>
+            </div>
+            <div className="login-body">
+              <div className="form-group">
+                <label htmlFor="text" style={{ color: 'white' }}>Username</label>
+                <input type="text" onChange={(e) => setUserName(e.target.value)} value={userName} required placeholder='Jhon Doe' />
+              </div>
+              <div className="form-group">
+                <label htmlFor="password" style={{ color: 'white' }}>Password</label>
+                <input type="password" onChange={handlePswChange} value={psw} required placeholder='********' />
+              </div>
+              {error && <div className="error-message">{error}</div>}
+              <div className="form-group">
+                <button type="submit" className='loginbttn'>Login</button>
+              </div>
+              <div className="form-group">
+                <LoginBtn />
+              </div>
+            </div>
+          </form>
         </div>
-        <div className="login-body">
-          <div className="form-group">
-            <label htmlFor="text" style={{ color: 'white'}}>Username</label>
-            <input type="text" onChange={(e)=>setUserName(e.target.value)} value={userName} required placeholder='Jhon Doe' />
-          </div>
-          <div className="form-group">
-            <label htmlFor="password" style={{ color: 'white'}}>Password</label>
-            <input type="password" onChange={handlePswChange} value={psw} required placeholder='********' />
-          </div>
-          {error && <div className="error-message">{error}</div>}
-          <div className="form-group">
-            <button type="submit" className='loginbttn'>Login</button>
-          </div>
-          <div className="form-group">
-            <LoginBtn/>
-          </div>
-        </div>
-      </form>
+      </div>
     </div>
-    </div>
-    </div>
-    
+
   );
 }
 

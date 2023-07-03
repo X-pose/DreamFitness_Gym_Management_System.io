@@ -23,7 +23,7 @@ exports.login = async (req, res) => {
         console.log(newLogin.userName, newLogin.psw);
         // Search for user in the database
         
-        if (newLogin.userName == 'AdminUser') {
+        if (newLogin.userName.includes('...')) {
             
             const admin = await adminUser.findOne({userName:newLogin.userName})
             bcrypt.compare(newLogin.psw, admin.psw, (err, resu) => {

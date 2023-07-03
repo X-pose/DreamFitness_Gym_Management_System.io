@@ -8,7 +8,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import '../public/css/contentContainer.css'
 import Homepage from './pages/Home.jsx';
-import ChangPlan from './pages/changePlan.jsx';
+import ChangePlan from './pages/ChangePlan.jsx';
 import AdminMainPage from './pages/AdminMainPage.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import PleaseLogin from './components/pleaseLoginPopUp';
@@ -84,7 +84,7 @@ function App() {
             />
             <Route
               path="/ChangePlan"
-              element={<ChangPlan />}
+              element={<ChangePlan />}
             />
             <Route
               path="/PleaseLogin"
@@ -130,79 +130,79 @@ function App() {
             />
 
             <Route
-              path = "/ProgressForm"
-              element = {<ProgressForm/>}
+              path="/ProgressForm"
+              element={<ProgressForm />}
             />
             <Route
-              path = "/ProgressGraph"
-              element = {<Graph/>}
+              path="/ProgressGraph"
+              element={<Graph />}
             />
             <Route
-              path = "/WorkoutLog"
-              element = {<Workoutlog/>}
+              path="/WorkoutLog"
+              element={<Workoutlog />}
             />
             <Route
-            
-            path = "/adminInstructor"
-            element ={<AdminInstructor/>}
-          />
-        
-          <Route
-            path = "/AddInstructor"
-            element ={<AddInstructor/>}
-          />
-           <Route
-            path = "/EditInstructor"
-            element ={<EditInstructor/>}
-          />
-           <Route
-            path = "/ViewOnlyInstructors"
-            element ={<ViewOnlyInstructors/>}
-          />
 
-          <Route 
-            path = "/adminDietPlan"
-            element = {<AdminDietPlan/>}
-              />
+              path="/adminInstructor"
+              element={<AdminInstructor />}
+            />
 
-          <Route 
-            path = "/userDietPlan"
-            element = {<UserDietPlan/>}
-              />
-          <Route
-            path = "/faqAdmin"
-            element = {<FAQADMIN/>}
-          />
-          <Route
-            path = "/faqCustom"
-            element = {<FAQcustom/>}
-          />
-          <Route
-            path = "/faqInAdmin"
-            element = {<FAQinadmin/>}
-          />
-        
-         
-          <Route
-            path='/AdminFeedback'
-            element ={<FeedbackAdmin/>}
-          />
-          <Route
-            path='/ViewFeedback'
-            element = {<FeedbackForm/>}
-          />
-          <Route
-            path = '/addMyFeedbacks'
-            element = {<FeedbackFormz/>}
-          />
-          <Route
-            path = '/myFeedbacks'
-            element = {<UpdateFeedback/>}
-          />
-          <Route
-            path = '/downloadUserDetails'
-            element = {<DownloadPDF/>}
-          />
+            <Route
+              path="/AddInstructor"
+              element={<AddInstructor />}
+            />
+            <Route
+              path="/EditInstructor"
+              element={<EditInstructor />}
+            />
+            <Route
+              path="/ViewOnlyInstructors"
+              element={<ViewOnlyInstructors />}
+            />
+
+            <Route
+              path="/adminDietPlan"
+              element={<AdminDietPlan />}
+            />
+
+            <Route
+              path="/userDietPlan"
+              element={<UserDietPlan />}
+            />
+            <Route
+              path="/faqAdmin"
+              element={<FAQADMIN />}
+            />
+            <Route
+              path="/faqCustom"
+              element={<FAQcustom />}
+            />
+            <Route
+              path="/faqInAdmin"
+              element={<FAQinadmin />}
+            />
+
+
+            <Route
+              path='/AdminFeedback'
+              element={<FeedbackAdmin />}
+            />
+            <Route
+              path='/ViewFeedback'
+              element={<FeedbackForm />}
+            />
+            <Route
+              path='/addMyFeedbacks'
+              element={<FeedbackFormz />}
+            />
+            <Route
+              path='/myFeedbacks'
+              element={<UpdateFeedback />}
+            />
+            <Route
+              path='/downloadUserDetails'
+              element={<DownloadPDF />}
+            />
 
           </Routes>
 

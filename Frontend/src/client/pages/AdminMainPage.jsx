@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import '../../public/css/adminMainCss.css'
 import LookUpUsers from '../components/searchUsers'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import ManageNotifyAdd from '../components/manageNotificationAdd';
 import Cookies from 'js-cookie'
 
@@ -9,6 +11,10 @@ function AdminMainPage() {
 
     const [results, setResults] = useState('')
     const [notify, setNotify] = useState('')
+    const [adminUserName, setAdminName] = useState('')
+    const [adminrole, setRole] = useState('')
+    const [adminPsw, setAdPsw] = useState('')
+    const [adminRePsw, setAdRePsw] = useState('')
 
     useEffect(() => {
 
@@ -34,6 +40,22 @@ function AdminMainPage() {
 
     }, [])
 
+    
+  const handleAdminUserNameChange = (e) => {
+    setAdminName(e.target.value);
+  };
+  
+  const handleAdminRoleChange = (e) => {
+    setRole(e.target.value);
+  };
+  
+  const handleAdminPswChange = (e) => {
+    setAdPsw(e.target.value);
+  };
+  const handleAdminRePswChange = (e) => {
+    setAdRePsw(e.target.value);
+  };
+
     async function searcAdminhNotify() {
 
         try {
@@ -54,7 +76,46 @@ function AdminMainPage() {
 
 
 
+    const addAdmin = async(e)=>{
+        e.preventDefault();
 
+        if(adminPsw == adminRePsw){
+
+            const newAdmin = {adminUserName, adminrole, adminPsw}
+            const response = await fetch('/api/addNewAdmin', {
+                method: 'POST',
+                body: JSON.stringify(newAdmin),
+                headers: {
+                  'Content-Type': 'application/json'
+                }
+              })
+          
+              const json = await response.json()
+              if (!response.ok) {
+               
+                toast.error('Something went wrong. Please try again', {
+                  position: toast.POSITION.TOP_RIGHT
+                });
+                console.log(json)
+          
+              }
+              if (response.ok) {
+          
+               
+                console.log('New AdminUser added', json);
+          
+                toast.success(json.userName +' Added to the system', {
+                  position: toast.POSITION.TOP_RIGHT
+                });
+            }
+        
+          
+        }else{
+            toast.warning("Password does not match!",{
+                position: toast.POSITION.BOTTOM_RIGHT
+              })
+        }
+    }
 
     async function logOutUser() {
         const resp = await fetch('/api/logout', {
@@ -79,14 +140,14 @@ function AdminMainPage() {
                     <div className='leftContainer'>
                         <div className="NameCompartment">
                             <div className='nameCompLeft'>
-                            <h5 className='NameAlign'>Name : {Cookies.get('sessionName')}</h5>
-                            <h5 className='roleAlign'>Role : {Cookies.get('sessionRole')}</h5>
+                                <h5 className='NameAlign'>Name : {Cookies.get('sessionName')}</h5>
+                                <h5 className='roleAlign'>Role : {Cookies.get('sessionRole')}</h5>
                             </div>
                             <div className='nameCompRight'>
-                            <button className="logOutBtnAdmin" onClick={logOutUser}>LogOut</button>
+                                <button className="logOutBtnAdmin" onClick={logOutUser}>LogOut</button>
                             </div>
-                           
-                            
+
+
                         </div>
                         <div className="leftBottomComp">
                             <div className="NotifyHeader">
@@ -103,20 +164,20 @@ function AdminMainPage() {
 
                                                     <div className="NotifyRowContainer">
                                                         <div className='NotifyRowHeaderMain'>
-                                                        <div className='NotifyRowHeader'>
-                                                            <div className='NotifyHeadLeft'>
-                                                                <h6>For: {NoifyItem.Destination}</h6>
+                                                            <div className='NotifyRowHeader'>
+                                                                <div className='NotifyHeadLeft'>
+                                                                    <h6 className='NotifyFontFirst'>For: {NoifyItem.Destination}</h6>
+                                                                </div>
+                                                                <div className='NotifyHeadRight'><h8 className='NotifyFontFirst'> Date: {NoifyItem.Date}</h8></div>
+
+
+
                                                             </div>
-                                                            <div className='NotifyHeadRight'><h8 className = 'fontsStyleRight'> Date: {NoifyItem.Date}</h8></div>
-
-
-                                                            
+                                                            <div className='NotifyRowTitle'><h8 className='NotifyFontTitle'>{NoifyItem.Title}</h8></div>
                                                         </div>
-                                                        <div className='NotifyRowTitle'><h8>{NoifyItem.Title}</h8></div>
-                                                        </div>
-                                                       
+
                                                         <div className='NotifyRowContent'>
-                                                            <h8>{NoifyItem.Description}</h8>
+                                                            <h8 className = "NotifyFontContent">{NoifyItem.Description}</h8>
                                                         </div>
 
 
@@ -167,7 +228,8 @@ function AdminMainPage() {
 
                         </div>
                     </div>
-                    <div className="RightButtonStack">
+                    <div className="RightContainer">
+                        <div className='btnStackRight'>
                         <a href="/adminInstructor" style={{ color: 'white', textDecoration: 'none' }}>
                             <button className="btnStack">Manage instructor library</button>
                         </a>
@@ -188,6 +250,25 @@ function AdminMainPage() {
                         <a href="/AdminFeedback" style={{ color: 'white', textDecoration: 'none' }}>
                             <button className="btnStack">Manage FeedBacks</button>
                         </a>
+                        </div>
+                        <div className='addAdmin'>
+                            <h3>Add an Admin</h3><br/>
+                            <form onSubmit={addAdmin}>
+                                <label forHtml ="User name : " />
+                                    <input type='text' placeholder='Enter user name' onChange={handleAdminUserNameChange}></input>
+                               
+                                <label forHtml='Assign role'/>
+                                    <select onChange={handleAdminRoleChange}>
+                                        <option value='SiteAdmin'> Site Admin</option>
+                                        <option value='Instructor'> Instructor</option>
+                                        <option value='GymManager'> Gym Manager</option>
+                                    </select>
+                                    <input type="password" name="Psw" required placeholder='Password' onChange={handleAdminPswChange} />
+                                    <input type="password" name="rePsw" required placeholder='Retype password' onChange={handleAdminRePswChange}/>
+                                    <button type='submit'>Add</button>
+                            </form>
+                        </div>
+                        
 
                     </div>
                 </div>
