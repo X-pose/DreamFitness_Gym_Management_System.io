@@ -42,7 +42,7 @@ function AdminViewUserDetails() {
                     <p>{userDetails.email}</p>
                 </div>
 
-                <div className="content-containerAD">
+                <div className="content_containerAD">
                     <div className="sub-containerLeftAD">
                         <div className='accountCompletionAD'>
                             <div className="progressbarAD">
@@ -63,10 +63,9 @@ function AdminViewUserDetails() {
                                     <span className="value2AD">{userDetails.myFitnessPlan}</span>
                                 </div>
                             </div>
-                            <div className='myPlanAlignAD'>
-
-                            </div>
-                            <div className='btnStackUADAD'>
+                            
+                        </div>
+                        <div className='btnStackUADAD'>
                                 <a href="/WorkoutSchedulerAdmin" style={{ color: 'white', textDecoration: 'none' }}>
                                     <button className='myPlansAD'>{userDetails.userName}'s workout schdule</button>
                                 </a>
@@ -78,14 +77,8 @@ function AdminViewUserDetails() {
 
                                 <button  className='myPlansAD'>Download {userDetails.userName}'s Details</button>
                                 </a>
-                                
-
-                              
-                                
-
+                
                             </div>
-
-                        </div>
                     </div>
                     <div className="sub-containerMiddleAD">
                         <div>
