@@ -73,7 +73,7 @@ function ChangePlan() {
             </select>
             <div className="Buttons">
             <div className='leftBtn'>
-              <button className="greenBtn" type="submit">Update My Plan</button>
+              <button className="greenBtn" type="submit">Update Plan</button>
             </div>
             <div className='rightBtn'>
               <a href='/MyAccount'>

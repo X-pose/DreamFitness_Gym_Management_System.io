@@ -1,7 +1,7 @@
 import { Document, Page, Text, View, StyleSheet, PDFViewer } from '@react-pdf/renderer';
 import React, { useEffect, useState } from 'react';
 
-export default function DownloadPDF(){
+export default function DownloadPDF() {
 
     const prop = JSON.parse(localStorage.getItem('propUser'));
 
@@ -18,7 +18,7 @@ export default function DownloadPDF(){
 
     const handleGenerateReport = () => {
         setGenerateReport(true);
-      };
+    };
 
     const generatePDFReport = () => {
 
@@ -35,41 +35,59 @@ export default function DownloadPDF(){
                 fontWeight: 'bold',
                 textAlign: 'center',
                 marginBottom: 10,
-                backgroundColor: 'red', // Add this line to set the background color to red
-                color: 'black', // Optionally, add this line to set the text color to white
-                padding: 10, // Optionally, add this line to add padding to the title
+                backgroundColor: 'black',
+                color: 'white',
+                padding: 10,
+                borderRadius: 20,
+                shadowColor: 'rgba(0, 0, 0, 0.5)',
+                shadowOffset: { width: 0, height: 2 },
+                shadowOpacity: 0.8,
+                shadowRadius: 2,
+                elevation: 5,
             },
             title: {
                 fontSize: 18,
                 fontWeight: 'bold',
-                backgroundColor: 'black',
-                color: 'red',
+                backgroundColor: 'red',
+                color: 'black',
+                fontWeight: 'bold',
                 textAlign: 'center',
                 marginBottom: 10,
-                padding: 10
+                padding: 10,
+                borderRadius: 20,
+                shadowColor: 'rgba(0, 0, 0, 0.5)',
+                shadowOffset: { width: 0, height: 2 },
+                shadowOpacity: 0.8,
+                shadowRadius: 2,
+                elevation: 5,
             },
             table: {
                 width: '100%',
-                border: '1 solid red',
-                marginTop: 10,
+                borderWidth: 1,
+                borderColor: 'red',
+                marginTop: 50,
             },
             tableRow: {
                 flexDirection: 'row',
+                marginTop: 5
             },
             tableHeaderCell: {
-                width: '40%',
+                width: '100%',
                 textAlign: 'center',
                 padding: 5,
-                border: '3 solid red',
+                borderWidth: 3,
+                borderColor: 'red',
                 fontWeight: 'bold',
-                fontSize: '15'
+                fontSize: 15,
+                backgroundColor: 'lightgray',
             },
             tableCell: {
                 width: '40%',
                 textAlign: 'center',
                 padding: 5,
-                border: '2 solid red',
-                fontSize1: '12'
+                borderWidth: 2,
+                borderColor: 'red',
+                fontSize: 12,
             },
             footer: {
                 position: 'absolute',
@@ -77,30 +95,25 @@ export default function DownloadPDF(){
                 bottom: 0,
                 width: '100%',
                 backgroundColor: 'black',
-                height: 100, // Increase this value to increase the height of the footer
-                paddingHorizontal: 10, // Adjust the horizontal padding as needed
-                flexDirection: 'row', // Align the content in a row
+                height: 120,
+                paddingHorizontal: 20,
+                flexDirection: 'row',
+                alignItems: 'center',
+                justifyContent: 'space-between',
             },
             footerText: {
                 color: 'red',
-                fontSize: 16, // Adjust the font size as needed
-                //alignSelf: 'flex-start', // Align the text to start from where the footer starts
-                flex: 1, // Take up available space in the footer
+                fontSize: 16,
+                fontWeight: 'bold',
+                alignSelf: 'flex-start',
                 textAlign: 'right',
-                fontWeight: 'extrabold',
-
-
             },
             address: {
                 color: 'white',
-                flex: 1,
                 textAlign: 'center',
-                fontSize: 14, // Adjust the font size as needed
-                marginTop: 10, // Add margin space between footerText and address
-
-            }
-
-
+                fontSize: 14,
+                marginTop: 10,
+            },
         });
 
 
@@ -176,7 +189,7 @@ export default function DownloadPDF(){
                         <View style={styles.footer}>
                             <Text style={styles.footerText}>Dream Fitness</Text>
                             <Text style={styles.address}>No. 101/3,New Kandy Rd, Kaduwela,10640</Text>
-
+                            
                         </View>
                     </View>
                 </Page>
@@ -185,15 +198,15 @@ export default function DownloadPDF(){
     };
 
 
-    return(
+    return (
         <div>
 
-{generateReport && (
-            <PDFViewer width="100%" height={600}>
-                {generatePDFReport()}
-            </PDFViewer>
-        )}
+            {generateReport && (
+                <PDFViewer width="100%" height={600}>
+                    {generatePDFReport()}
+                </PDFViewer>
+            )}
         </div>
-        
+
     )
 }

@@ -15,7 +15,7 @@ export default function AccountNavBlock() {
             setSessionNameCookie(CookieName);
             setLoggedIn(true);
 
-            if (CookieName === 'AdminUser') {
+            if (CookieName.includes('...')) {
                 setAdmin(true);
             }
         }
