@@ -3,6 +3,7 @@ import '../../public/css/adminMainCss.css'
 import LookUpUsers from '../components/searchUsers'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { validations } from '../../public/js/Validation'
 import ManageNotifyAdd from '../components/manageNotificationAdd';
 import Cookies from 'js-cookie'
 
@@ -40,21 +41,21 @@ function AdminMainPage() {
 
     }, [])
 
-    
-  const handleAdminUserNameChange = (e) => {
-    setAdminName(e.target.value);
-  };
-  
-  const handleAdminRoleChange = (e) => {
-    setRole(e.target.value);
-  };
-  
-  const handleAdminPswChange = (e) => {
-    setAdPsw(e.target.value);
-  };
-  const handleAdminRePswChange = (e) => {
-    setAdRePsw(e.target.value);
-  };
+
+    const handleAdminUserNameChange = (e) => {
+        setAdminName(e.target.value);
+    };
+
+    const handleAdminRoleChange = (e) => {
+        setRole(e.target.value);
+    };
+
+    const handleAdminPswChange = (e) => {
+        setAdPsw(e.target.value);
+    };
+    const handleAdminRePswChange = (e) => {
+        setAdRePsw(e.target.value);
+    };
 
     async function searcAdminhNotify() {
 
@@ -76,45 +77,55 @@ function AdminMainPage() {
 
 
 
-    const addAdmin = async(e)=>{
+    const addAdmin = async (e) => {
         e.preventDefault();
 
-        if(adminPsw == adminRePsw){
+        //Creating an instance from validation class
+        const addAdminValidations = new validations();
 
-            const newAdmin = {adminUserName, adminrole, adminPsw}
+        //Passing parameters to validate
+        const warnMsg = addAdminValidations.AddAdminValidator(adminUserName, adminPsw, adminRePsw);
+
+        if (warnMsg !== null) {
+            toast.warning(warnMsg, {
+                position: toast.POSITION.TOP_RIGHT
+            });
+        } else {
+
+            const newAdmin = { adminUserName, adminrole, adminPsw }
             const response = await fetch('/api/addNewAdmin', {
                 method: 'POST',
                 body: JSON.stringify(newAdmin),
                 headers: {
-                  'Content-Type': 'application/json'
+                    'Content-Type': 'application/json'
                 }
-              })
-          
-              const json = await response.json()
-              if (!response.ok) {
-               
+            })
+
+            const json = await response.json()
+            if (!response.ok) {
+
                 toast.error('Something went wrong. Please try again', {
-                  position: toast.POSITION.TOP_RIGHT
+                    position: toast.POSITION.TOP_RIGHT
                 });
                 console.log(json)
-          
-              }
-              if (response.ok) {
-          
-               
+
+            }
+            if (response.ok) {
+
+
                 console.log('New AdminUser added', json);
-          
-                toast.success(json.userName +' Added to the system', {
-                  position: toast.POSITION.TOP_RIGHT
+
+                toast.success(json.userName + ' Added to the system', {
+                    position: toast.POSITION.TOP_RIGHT
                 });
             }
-        
-          
-        }else{
-            toast.warning("Password does not match!",{
-                position: toast.POSITION.BOTTOM_RIGHT
-              })
+
         }
+
+
+
+
+
     }
 
     async function logOutUser() {
@@ -177,7 +188,7 @@ function AdminMainPage() {
                                                         </div>
 
                                                         <div className='NotifyRowContent'>
-                                                            <h8 className = "NotifyFontContent">{NoifyItem.Description}</h8>
+                                                            <h8 className="NotifyFontContent">{NoifyItem.Description}</h8>
                                                         </div>
 
 
@@ -230,45 +241,45 @@ function AdminMainPage() {
                     </div>
                     <div className="RightContainer">
                         <div className='btnStackRight'>
-                        <a href="/adminInstructor" style={{ color: 'white', textDecoration: 'none' }}>
-                            <button className="btnStack">Manage instructor library</button>
-                        </a>
+                            <a href="/adminInstructor" style={{ color: 'white', textDecoration: 'none' }}>
+                                <button className="btnStack">Manage instructor library</button>
+                            </a>
 
-                        <LookUpUsers />
+                            <LookUpUsers />
 
-                        <a href="/adminDietPlan" style={{ color: 'white', textDecoration: 'none' }}>
-                            <button className="btnStack">Manage diet plans</button>
-                        </a>
-                        <a href="/faqAdmin" style={{ color: 'white', textDecoration: 'none' }}>
-                            <button className="btnStack">Manage FAQs</button>
-                        </a>
-                        <a href="/exerciseDemoAdmin" style={{ color: 'white', textDecoration: 'none' }}>
-                            <button className="btnStack">Manage exercise library</button>
-                        </a>
-                        <ManageNotifyAdd />
+                            <a href="/adminDietPlan" style={{ color: 'white', textDecoration: 'none' }}>
+                                <button className="btnStack">Manage diet plans</button>
+                            </a>
+                            <a href="/faqAdmin" style={{ color: 'white', textDecoration: 'none' }}>
+                                <button className="btnStack">Manage FAQs</button>
+                            </a>
+                            <a href="/exerciseDemoAdmin" style={{ color: 'white', textDecoration: 'none' }}>
+                                <button className="btnStack">Manage exercise library</button>
+                            </a>
+                            <ManageNotifyAdd />
 
-                        <a href="/AdminFeedback" style={{ color: 'white', textDecoration: 'none' }}>
-                            <button className="btnStack">Manage FeedBacks</button>
-                        </a>
+                            <a href="/AdminFeedback" style={{ color: 'white', textDecoration: 'none' }}>
+                                <button className="btnStack">Manage FeedBacks</button>
+                            </a>
                         </div>
                         <div className='addAdmin'>
-                            <h3>Add an Admin</h3><br/>
+                            <h3>Add an Admin</h3><br />
                             <form onSubmit={addAdmin}>
-                                <label forHtml ="User name : " />
-                                    <input type='text' placeholder='Enter user name' onChange={handleAdminUserNameChange}></input>
-                               
-                                <label forHtml='Assign role'/>
-                                    <select onChange={handleAdminRoleChange}>
-                                        <option value='SiteAdmin'> Site Admin</option>
-                                        <option value='Instructor'> Instructor</option>
-                                        <option value='GymManager'> Gym Manager</option>
-                                    </select>
-                                    <input type="password" name="Psw" required placeholder='Password' onChange={handleAdminPswChange} />
-                                    <input type="password" name="rePsw" required placeholder='Retype password' onChange={handleAdminRePswChange}/>
-                                    <button type='submit'>Add</button>
+                                <label forHtml="User name : " />
+                                <input type='text' placeholder='Enter user name' onChange={handleAdminUserNameChange}></input>
+
+                                <label forHtml='Assign role' />
+                                <select onChange={handleAdminRoleChange}>
+                                    <option value='SiteAdmin'> Site Admin</option>
+                                    <option value='Instructor'> Instructor</option>
+                                    <option value='GymManager'> Gym Manager</option>
+                                </select>
+                                <input type="password" name="Psw" required placeholder='Password' onChange={handleAdminPswChange} />
+                                <input type="password" name="rePsw" required placeholder='Retype password' onChange={handleAdminRePswChange} />
+                                <button type='submit'>Add</button>
                             </form>
                         </div>
-                        
+
 
                     </div>
                 </div>

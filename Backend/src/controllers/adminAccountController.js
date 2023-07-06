@@ -40,7 +40,7 @@ exports.searchUserAccounts = async(req,res) =>{
     
         const results = await newUserAdded.find({});
         console.log(results)
-        res.status(201).json(results);
+        res.status(201).json(results.reverse());
 
     } catch (error) {
         console.error(error);

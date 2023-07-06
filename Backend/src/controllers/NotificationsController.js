@@ -35,11 +35,11 @@ exports.showNotify = async (req, res) => {
       ]);
   
       const notifyArray = [personalNotify, globalNotify].filter(Boolean);
-  
+      
       if (notifyArray.length === 0) {
         res.status(404).json({ error: 'No notifications found' });
       } else {
-        res.status(200).json(notifyArray);
+        res.status(200).json(notifyArray.reverse());
       }
     } catch (error) {
       console.error(error);
@@ -53,7 +53,8 @@ exports.adminShowNotify = async(req,res)=>{
     let adminNotifyArray = []
 
     adminNotifyArray = await notfy.find({});
-    res.status(201).json(adminNotifyArray);
+    const reversedArray = adminNotifyArray.reverse()
+    res.status(201).json(reversedArray);
 }
 
 exports.newUserAdded = async(req)=>{

@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import SignUpBtn from '../components/SignUpBtn';
+import {validations} from '../../public/js/Validation'
 import '../../public/css/Signupx.css'
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 
@@ -73,128 +74,53 @@ function SignUp() {
   const RegSubmit = async (e) => {
     e.preventDefault();
 
-    //Validating inputs
-    if (userName.length < 3) {
-      setError(
-        toast.warning('Username must have more than 3 letters', {
+    //Creating an instance from validation class
+    const signUpValidations = new validations();
+
+    //Passing parameters to validate
+    const warnMsg = signUpValidations.SignUpvalidator(userName,fName,lName,email,contactNo,psw,repsw);
+
+    if(warnMsg !== null){
+      toast.warning(warnMsg, {
+        position: toast.POSITION.TOP_RIGHT
+      });
+    }else{
+      const newUser = { userName, fName, lName, email, contactNo, psw }
+      const response = await fetch('/api/signupformdata', {
+        method: 'POST',
+        body: JSON.stringify(newUser),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+  
+      const json = await response.json()
+      if (!response.ok) {
+        setError(json.Error)
+        toast.error('Something went wrong. Please try again', {
           position: toast.POSITION.TOP_RIGHT
-        }));
-      return;
-    }
-
-    if (userName.includes("...")) {
-      setError(
-        toast.warning('Username cannot contain "..." character. Please select another user name', {
-          position: toast.POSITION.TOP_RIGHT
-        }));
-      return;
-    }
-
-    if (fName === '') {
-
-      setError(
-        toast.warning('Please enter your first name', {
-          position: toast.POSITION.TOP_RIGHT
-        })
-      );
-      return;
-    }
-
-    if (lName === '') {
-      setError(
-        toast.warning('Please enter your last name', {
-          position: toast.POSITION.TOP_RIGHT
-        })
-      );
-      return;
-    }
-
-    if (email === '') {
-      setError(
-        toast.warning('Please enter your email', {
-          position: toast.POSITION.TOP_RIGHT
-        })
-      );
-      return;
-    }
-
-    if (!/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
-      setError(
-        toast.warning('Please enter a valid email', {
-          position: toast.POSITION.TOP_RIGHT
-        })
-      );
-      return;
-    }
-
-    if (contactNo.length < 10) {
-      setError(
-        toast.warning('Please enter your correct contact number', {
-          position: toast.POSITION.TOP_RIGHT
-        })
-      );
-      return;
-    }
-
-    if (!/^[0-9]+$/.test(contactNo)) {
-      setError(
-        toast.warning('Please enter a valid contact number', {
-          position: toast.POSITION.TOP_RIGHT
-        })
-      );
-      return;
-    }
-
-    if (psw.length < 8) {
-      setError(
-        toast.warning('Password must have atleast 8 characters', {
-          position: toast.POSITION.TOP_RIGHT
-        })
-      );
-      return;
-    }
-
-    if (psw !== repsw) {
-      setError(
-        toast.warning('Passwords do not match', {
-          position: toast.POSITION.TOP_RIGHT
-        })
-      );
-      return;
-    }
-
-    const newUser = { userName, fName, lName, email, contactNo, psw }
-    const response = await fetch('/api/signupformdata', {
-      method: 'POST',
-      body: JSON.stringify(newUser),
-      headers: {
-        'Content-Type': 'application/json'
+        });
+        console.log(json)
+  
       }
-    })
-
-    const json = await response.json()
-    if (!response.ok) {
-      setError(json.Error)
-      toast.error('Something went wrong. Please try again', {
-        position: toast.POSITION.TOP_RIGHT
-      });
-      console.log(json)
-
+      if (response.ok) {
+  
+        setError(null)
+        console.log('New user added', json);
+  
+        toast.success('Signed up succesfully!\nPlease Login', {
+          position: toast.POSITION.TOP_RIGHT
+        });
+  
+        setTimeout(function () {
+          window.location.href = '/Login'
+        }, 4000);
+        setTimeout();
+      }
     }
-    if (response.ok) {
+   
 
-      setError(null)
-      console.log('New user added', json);
-
-      toast.success('Signed up succesfully!\nPlease Login', {
-        position: toast.POSITION.TOP_RIGHT
-      });
-
-      setTimeout(function () {
-        window.location.href = '/Login'
-      }, 4000);
-      setTimeout();
-    }
+   
   }
 
   return (
