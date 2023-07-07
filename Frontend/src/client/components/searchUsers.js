@@ -40,14 +40,15 @@ function SearchUserFun(props) {
 
 
     return (
-        <Modal
+        
+        <Modal 
             {...props}
             size="lg"
             aria-labelledby="contained-modal-title-vcenter"
             centered
             
            
-        >
+        ><div className='modelContainer'>
             <Modal.Header closeButton >
                 <Modal.Title id="contained-modal-title-vcenter">
                     <h1 className='headerFont'>Search Users</h1>
@@ -69,7 +70,7 @@ function SearchUserFun(props) {
                                 />
                             </div>
                             <div className='searchBtn'>
-                                <Button type='submit' variant="outline-success">Search</Button>
+                                <Button type='submit' className= 'successBTN' variant="outline-success">Search</Button>
                             </div>
 
                         </Form>
@@ -118,7 +119,9 @@ function SearchUserFun(props) {
 
                 <Button onClick={props.onHide}>Close</Button>
             </Modal.Footer>
+            </div>
         </Modal>
+        
     )
 
 }
