@@ -1,0 +1,51 @@
+#toast-container {
+  display: grid;
+  grid-template-rows: 350px 150px;
+  position: fixed;
+  top: 25%;
+  bottom: 25%;
+  right: 0;
+  left: 0;
+
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+  height: 500px;
+  z-index: 9999;
+  pointer-events: none;
+  background-color: black;
+  border-radius: 20px;
+  border: 5px solid red
+}
+
+#toast {
+  
+  color: #fff;
+  padding: 16px;
+  border-radius: 4px;
+  font-size: 18px;
+
+}
+
+#checkMark {
+ 
+  width: fit-content;
+  height: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  opacity: 0; /* Start with transparency */
+  animation-name: fadeIn;
+  animation-duration: 2s;
+  animation-fill-mode: forwards; /* Retain final state after animation */
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1; /* Fully visible */
+  }
+}

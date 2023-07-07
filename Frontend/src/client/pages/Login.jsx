@@ -7,6 +7,7 @@ import Cookies from 'js-cookie';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import LoginBtn from '../components/loginBtn';
+import LoginToast from '../components/loginToast';
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 
 
@@ -29,6 +30,7 @@ function Login() {
   const [userName, setUserName] = useState('')
   const [psw, setPsw] = useState('')
   const [error, setError] = useState('')
+  const [loginSuccess, setLoginSuccess] = useState(false)
 
   const handlePswChange = (e) => {
     setPsw(e.target.value);
@@ -41,7 +43,8 @@ function Login() {
 
       var charNo = 8 - psw.length;
       toast.warning('You are missing ' + charNo + ' characters in your password!', {
-        position: toast.POSITION.TOP_RIGHT
+        position: toast.POSITION.TOP_RIGHT,
+          theme: 'dark'
       });
       return;
     }
@@ -59,13 +62,15 @@ function Login() {
     if (!response.ok) {
       setError(json.Error)
       toast.error('Login credentials are invalid. Please try again', {
-        position: toast.POSITION.TOP_RIGHT
+        position: toast.POSITION.TOP_RIGHT,
+          theme: 'dark'
       });
     }
     if (response.ok) {
       if (json === 'Admin') {
         toast.success('Wellcome, '+ userName+ '!', {
-          position: toast.POSITION.TOP_RIGHT
+          position: toast.POSITION.TOP_RIGHT,
+          theme: 'dark'
         });
 
         console.log("Cookies has been created. Passing alpha : " + Cookies.get('sessionName'))
@@ -79,10 +84,15 @@ function Login() {
       
 
       } else {
+        /*
         toast.success('Logged in successfully !', {
-          position: toast.POSITION.TOP_RIGHT
+          position: toast.POSITION.TOP_RIGHT,
+          theme: 'dark',
+        
         });
-
+        */
+        setLoginSuccess(true)
+       
         console.log("Cookies has been created: " + Cookies.get('sessionName'))
 
         setError(null)
@@ -130,6 +140,7 @@ function Login() {
           </form>
         </div>
       </div>
+      {loginSuccess && <LoginToast />}
     </div>
 
   );

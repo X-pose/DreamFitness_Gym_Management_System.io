@@ -170,7 +170,7 @@ body{
  
 }
 
-.proleft img {
+.proright img {
   max-width: 100%;
   height: auto;
   margin-top: 100px;
@@ -179,13 +179,18 @@ body{
 
 .proright {
   background: url(image\ 18.png);
-  background-size:contain;
+  background-size:cover;
   background-position: center;
+
 }
 
 
 .childleft1{
+  border: 1px solid #FCB602  ;
+  border-radius: 20px;
     margin-top: 200px;
+    padding: 20px;
+    height: max-content;
     color: rgb(255, 255, 255);
     
 }
@@ -212,8 +217,10 @@ body{
 }
 
 .childleft2{
+  border: 1px solid #FCB602  ;
+  border-radius: 20px;
     margin-top: 200px;
+    padding: 20px;
+    height: max-content;
     color: rgb(255, 255, 255);
-    width:500px;
-    margin-left: 0px;
 }

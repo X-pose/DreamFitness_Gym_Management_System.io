@@ -52,7 +52,8 @@ const ProgressForm = () =>{
         }
         if (response.ok) {
           toast.success(' Progress record added successfully !', {
-            position: toast.POSITION.TOP_RIGHT
+            position: toast.POSITION.TOP_RIGHT,
+          theme: 'dark'
           });
           setError(null)
           setDate('')

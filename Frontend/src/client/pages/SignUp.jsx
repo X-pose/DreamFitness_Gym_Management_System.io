@@ -82,7 +82,8 @@ function SignUp() {
 
     if(warnMsg !== null){
       toast.warning(warnMsg, {
-        position: toast.POSITION.TOP_RIGHT
+        position: toast.POSITION.TOP_RIGHT,
+          theme: 'dark'
       });
     }else{
       const newUser = { userName, fName, lName, email, contactNo, psw }
@@ -98,7 +99,8 @@ function SignUp() {
       if (!response.ok) {
         setError(json.Error)
         toast.error('Something went wrong. Please try again', {
-          position: toast.POSITION.TOP_RIGHT
+          position: toast.POSITION.TOP_RIGHT,
+          theme: 'dark'
         });
         console.log(json)
   
@@ -109,7 +111,8 @@ function SignUp() {
         console.log('New user added', json);
   
         toast.success('Signed up succesfully!\nPlease Login', {
-          position: toast.POSITION.TOP_RIGHT
+          position: toast.POSITION.TOP_RIGHT,
+          theme: 'dark'
         });
   
         setTimeout(function () {
