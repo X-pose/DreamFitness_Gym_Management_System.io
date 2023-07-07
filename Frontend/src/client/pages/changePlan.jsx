@@ -35,7 +35,8 @@ function ChangePlan() {
       if (response.ok) {
 
         toast.success('Membership plan updated succefully!', {
-          position: toast.POSITION.TOP_RIGHT
+          position: toast.POSITION.TOP_RIGHT,
+          theme: 'dark'
         });
         
         setTimeout(function() {

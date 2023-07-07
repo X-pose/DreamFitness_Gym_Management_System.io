@@ -3,8 +3,6 @@ import "../../public/css/Home.css"
 import { useRef } from "react";
 import { useEffect } from "react";
 import videoFile from '../../public/Videos/er.mp4';
-import videoFile2 from '../../public/Videos/edd.mp4';
-import Footer from "../components/Footer";
 
 function Homepage() {
 

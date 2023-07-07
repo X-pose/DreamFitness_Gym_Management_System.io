@@ -88,7 +88,8 @@ function AdminMainPage() {
 
         if (warnMsg !== null) {
             toast.warning(warnMsg, {
-                position: toast.POSITION.TOP_RIGHT
+                position: toast.POSITION.TOP_RIGHT,
+          theme: 'dark'
             });
         } else {
 
@@ -105,7 +106,8 @@ function AdminMainPage() {
             if (!response.ok) {
 
                 toast.error('Something went wrong. Please try again', {
-                    position: toast.POSITION.TOP_RIGHT
+                    position: toast.POSITION.TOP_RIGHT,
+          theme: 'dark'
                 });
                 console.log(json)
 
@@ -116,7 +118,8 @@ function AdminMainPage() {
                 console.log('New AdminUser added', json);
 
                 toast.success(json.userName + ' Added to the system', {
-                    position: toast.POSITION.TOP_RIGHT
+                    position: toast.POSITION.TOP_RIGHT,
+                    theme: 'dark'
                 });
             }
 
@@ -143,7 +146,7 @@ function AdminMainPage() {
 
 
     return (
-        <div>
+        <div><ToastContainer autoClose = {3000}/>
 
             <h1 className='MainHeaderTxt'><b><u>Admin Panel</u></b></h1>
             <div className="MainbackgroundWhite">
