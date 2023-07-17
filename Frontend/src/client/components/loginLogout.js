@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Cookies from 'js-cookie';
+import axios from "axios";
 
 
 export default function LoginLogout(){
@@ -18,17 +19,13 @@ export default function LoginLogout(){
 
     
   async function logOutUser(){
-    const resp = await fetch('/api/logout',{
-      method: 'POST',
-      
-    })
 
-    
-    if (resp.ok) {
+    await axios.post('/api/logout')
+    .then(()=>{
         Cookies.remove('sessionName')
         window.location.href = '/'
-      
-    }
+    })
+
   }
 
 

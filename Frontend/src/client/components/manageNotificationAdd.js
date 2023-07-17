@@ -5,6 +5,7 @@ import Form from 'react-bootstrap/Form';
 import '../../public/css/searchUser.css'
 import '../../public/css/adminMainCss.css'
 import '../../public/css/manageNotify.css'
+import axios from 'axios';
 
 
 function SearchUserFun(props) {
@@ -32,19 +33,17 @@ function SearchUserFun(props) {
         console.log('Title:', Title);
         console.log('Description:', Description);
         const newNoify = { Title, Destination, Description }
-        const response = await fetch('/api/createNotfy', {
-            method: 'POST',
-            body: JSON.stringify(newNoify),
+        const options = {
             headers: {
                 'Content-Type': 'application/json'
             }
-        })
-
-        if (response.ok) {
-            console.log("Notification Added Okay!")
-            searchNotify();
-            setAddMode(false)
         }
+        await axios.post('/api/createNotfy', JSON.stringify(newNoify), options)
+            .then(() => {
+                console.log("Notification Added Okay!")
+                searchNotify();
+                setAddMode(false)
+            })
 
         setLoading(false)
 
@@ -54,14 +53,16 @@ function SearchUserFun(props) {
     async function searchNotify() {
 
         try {
-            const response = await fetch(`/api/adminNotify`);
-            const data = await response.json();
-            setResults(data);
-            if (response.ok) {
-                console.log("Notify data retrived!")
-            } else {
-                console.log("Notify data retrive failed")
-            }
+            await axios.get('/api/adminNotify')
+                .then(res => {
+                    console.log("Notify data retrived!")
+                    const data = res.data;
+                    setResults(data);
+                })
+                .catch(() => {
+                    console.log("Notify data retrive failed")
+                })
+           
         } catch (error) {
             console.error(error);
         }
@@ -89,7 +90,7 @@ function SearchUserFun(props) {
                 {addMode ? (
                     <div>
                         <form className='addNotifyForm' onSubmit={handleAdd}>
-                          
+
                             <label htmlFor="otherDestination">Destination:</label>
                             <input
                                 type="text"

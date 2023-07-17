@@ -4,6 +4,7 @@ import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import '../../public/css/searchUser.css'
 import '../../public/css/adminMainCss.css'
+import axios from 'axios';
 
 
 function SearchUserFun(props) {
@@ -14,14 +15,17 @@ function SearchUserFun(props) {
     async function searchUsers(event) {
         event.preventDefault();
         try {
-            const response = await fetch(`/api/searchUsers?q=${query}`);
-            const data = await response.json();
-            setResults(data);
-            if (response.ok) {
+
+            await axios.get(`/api/searchUsers?q=${query}`)
+            .then(res=>{
+                const data =  res.data;
+                setResults(data);
                 console.log("USer data retrived!")
-            } else {
+            })
+            .catch(()=>{
                 console.log("USer data retrive failed")
-            }
+            })
+            
         } catch (error) {
             console.error(error);
         }

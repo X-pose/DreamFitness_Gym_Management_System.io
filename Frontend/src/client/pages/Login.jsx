@@ -8,6 +8,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import LoginBtn from '../components/loginBtn';
 import LoginToast from '../components/loginToast';
+import axios from 'axios';
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 
 
@@ -50,24 +51,14 @@ function Login() {
     }
 
     const logUser = { userName, psw }
-    const response = await fetch('/api/loginformdata', {
-      method: 'POST',
-      body: JSON.stringify(logUser),
+    const options = {
       headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-
-    const json = await response.json()
-    if (!response.ok) {
-      setError(json.Error)
-      toast.error('Login credentials are invalid. Please try again', {
-        position: toast.POSITION.TOP_RIGHT,
-          theme: 'dark'
-      });
-    }
-    if (response.ok) {
-      if (json === 'Admin') {
+      'Content-Type': 'application/json'
+    }}
+    await axios.post('/api/loginformdata',JSON.stringify(logUser), options)
+    .then(res=>{
+   
+      if (res.data.role === 'Admin') {
         toast.success('Wellcome, '+ userName+ '!', {
           position: toast.POSITION.TOP_RIGHT,
           theme: 'dark'
@@ -76,7 +67,7 @@ function Login() {
         console.log("Cookies has been created. Passing alpha : " + Cookies.get('sessionName'))
 
         setError(null)
-        console.log('AdminUser logged in', json)
+        console.log('AdminUser logged in')
         setTimeout(function () {
           window.location.href = '/AdminMainPage'
         }, 2500);
@@ -97,15 +88,23 @@ function Login() {
 
         setError(null)
 
-        console.log('User logged in', json)
+        console.log('User logged in')
         
         setTimeout(function () {
           window.location.href = '/MyAccount'
         }, 2500);
       
       }
-
-    }
+    })
+    .catch(()=>{
+     
+      toast.error('Login credentials are invalid. Please try again', {
+        position: toast.POSITION.TOP_RIGHT,
+          theme: 'dark'
+      });
+    })
+   
+   
   }
 
   return (

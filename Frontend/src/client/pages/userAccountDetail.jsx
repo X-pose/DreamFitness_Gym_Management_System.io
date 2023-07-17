@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import '../../public/css/accDisUpd.css'
-
+import axios from "axios"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Form from 'react-bootstrap/Form';
@@ -36,10 +36,11 @@ function AccountDisplayUpdate() {
 
         const fetchUserDetails = async () => {
             console.log('Data retrive initiated phase 2')
-            const response = await fetch('/api/accountdetails')
-            const json = await response.json()
 
-            if (response.ok) {
+            try {
+                const response = await axios.get('/api/accountdetails')
+                const json = await response.data
+
                 setUserDetails(json)
                 setfName(json.fName)
                 setlName(json.lName)
@@ -57,7 +58,10 @@ function AccountDisplayUpdate() {
 
 
 
+            } catch (error) {
+                console.log(error)
             }
+
         }
 
         fetchUserDetails()
@@ -81,7 +85,7 @@ function AccountDisplayUpdate() {
     const [weight, setWeight] = useState(userDetails?.weight);
     const [TFP, setTFP] = useState(userDetails?.TFP);
     const [proPic, setProPic] = useState(userDetails?.proPic);
-    const [Error, setError] = useState('');
+    
 
     const UpdSubmit = async () => {
         try {
@@ -106,42 +110,35 @@ function AccountDisplayUpdate() {
             // append the file to the FormData object
             formData.append('proPic', proPic);
 
-            // create the request object
-            const request = new Request('/api/updateMyDetails', {
-                method: 'PUT',
-                body: formData,
+           
+            // send the request using axios
+            axios.put('/api/updateMyDetails', formData)
+                .then(response => {
 
-            });
+                    // handle success
+                    toast.success('Details updated successfully!', {
+                        position: toast.POSITION.TOP_RIGHT,
+                        theme: 'dark'
+                    });
+                  
+                    console.log('User details updated successfully!');
+                    setUserDetails(response);
 
-            // send the request using fetch
-            fetch(request)
-                .then((response) => {
-                    if (response.ok) {
-                        // handle success
-                        toast.success('Details updated successfully!', {
-                            position: toast.POSITION.TOP_RIGHT,
-                            theme: 'dark'
-                        });
-                        setError(null);
-                        console.log('User details updated successfully!');
-                        setUserDetails(request);
+                    setTimeout(function () {
+                        window.location.href = '/MyAccount';
+                    }, 5000);
 
-                        setTimeout(function () {
-                            window.location.href = '/MyAccount';
-                        }, 5000);
-                    } else {
-                        // handle error
-                        toast.error('Something went wrong. Please try again', {
-                            position: toast.POSITION.TOP_RIGHT,
-                            theme: 'dark'
-                        });
-                        setError(request.Error);
-                        console.error('Failed to update user details:', request.error);
-                    }
                 })
-                .catch((error) => {
+                .catch(error => {
                     // handle error
                     console.error('An error occurred while updating user details:', error);
+                    // handle error
+                    toast.error('Something went wrong. Please try again', {
+                        position: toast.POSITION.TOP_RIGHT,
+                        theme: 'dark'
+                    });
+                    
+                    console.error('Failed to update user details:', error);
                 });
 
 
