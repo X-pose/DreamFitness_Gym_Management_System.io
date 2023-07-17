@@ -1,6 +1,7 @@
 import  {useState} from 'react';
 import { GoogleLogin } from 'react-google-login';
 import '../../public/css/Signupx.css'
+import axios from 'axios';
 const clientID = "796411994962-2uhaa7a0obchg0ukk0oirgor4a56ghlh.apps.googleusercontent.com";
 
 
@@ -29,30 +30,24 @@ function SignUpBtn() {
         console.log(userName + ' ' + fName+ ' ' +lName+ ' ' +email+ ' ' +contactNo+ ' ' +psw)
 
         const newUser = {userName,fName,lName,email,contactNo,psw}
-        const response = await fetch('/api/signupformdata',{
-            method: 'POST',
-            body: JSON.stringify(newUser),
+        const options = {
             headers:{
                 'Content-Type' : 'application/json'
             }
-        })
-
-        const json = await response.json()
-        if(!response.ok){
-            setError(json.Error)
-           
         }
-        if(response.ok){
-            
-            setError(null)
-            console.log('New user added', json);
-            
+        await axios.post('/api/signupformdata',JSON.stringify(newUser), options)
+        .then(res=>{
            
+            console.log('New user added', res.data);
+        
             setTimeout(function() {
               window.location.href = '/Login'
             }, 4000);
             setTimeout();
-        }
+        })
+        
+       
+      
         
         
     }

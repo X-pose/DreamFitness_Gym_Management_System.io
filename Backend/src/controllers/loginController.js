@@ -9,7 +9,7 @@ const bcrypt = require('bcrypt');
 const sessionHandler = require('../config/sessionHandler');
 
 
-//get form data 
+//get form data as POST
 exports.login = async (req, res) => {
     try {
 
@@ -42,7 +42,8 @@ exports.login = async (req, res) => {
                         res.cookie('sessionId', req.sessionID);
                         res.cookie('sessionRole', req.session.role);
 
-                        res.status(200).json('Admin')
+                        res.status(200).json({ role: 'Admin' });
+
                        
                     }else{
                         
