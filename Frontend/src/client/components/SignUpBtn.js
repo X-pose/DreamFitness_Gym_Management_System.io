@@ -45,7 +45,9 @@ function SignUpBtn() {
             }, 4000);
             setTimeout();
         })
-        
+        .catch(()=>{
+            console.log("Caught runtime error at signUPBtn")
+        })
        
       
         
