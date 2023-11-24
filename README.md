@@ -33,6 +33,9 @@ To build the production version, type npm build.
 
 To run the backend, type npm start.
 
+**New** -  Backend now supports server-side rendering. 
+To run the optimized build type "npm start" and type "http://localhost:4000/" in your browser
+
 **Usage guide:**
 
 - Always use the development server for testing. The production build should only be used when the app is ready for deployment.
