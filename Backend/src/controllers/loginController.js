@@ -5,7 +5,7 @@
 
 const loginUser = require('../models/loginModel');
 const adminUser = require('../models/AdminLoginModel');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const sessionHandler = require('../config/sessionHandler');
 
 

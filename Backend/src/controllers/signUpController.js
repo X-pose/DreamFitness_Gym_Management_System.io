@@ -2,7 +2,7 @@
 //SignUp basic functionalities are done. validations are not yet completed - completion -> 80%
 //ToDo -> 1. Validations - check whether userName is alredy in the database - 4/16/2023
 
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const User = require('../models/signUPModel');
 const connectDB = require('../config/database');
 const currentDate = new Date();

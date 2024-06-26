@@ -45,6 +45,9 @@ function SignUpBtn() {
             }, 4000);
             setTimeout();
         })
+        .catch(()=>{
+            console.log("Error caught at sign up btn")
+        })
         
        
       

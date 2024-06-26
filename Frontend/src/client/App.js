@@ -8,7 +8,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import '../public/css/contentContainer.css'
 import Homepage from './pages/Home.jsx';
-import ChangePlan from './pages/ChangePlan.jsx';
+import ChangePlan from './pages/changePlan.jsx';
 import AdminMainPage from './pages/AdminMainPage.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import PleaseLogin from './components/pleaseLoginPopUp';

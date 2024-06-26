@@ -17,15 +17,15 @@ function SearchUserFun(props) {
         try {
 
             await axios.get(`/api/searchUsers?q=${query}`)
-            .then(res=>{
-                const data =  res.data;
-                setResults(data);
-                console.log("USer data retrived!")
-            })
-            .catch(()=>{
-                console.log("USer data retrive failed")
-            })
-            
+                .then(res => {
+                    const data = res.data;
+                    setResults(data);
+                    console.log("USer data retrived!")
+                })
+                .catch(() => {
+                    console.log("USer data retrive failed")
+                })
+
         } catch (error) {
             console.error(error);
         }
@@ -36,7 +36,7 @@ function SearchUserFun(props) {
         setQuery(event.target.value);
     }
 
-    function handleRowBtnClick(e){
+    function handleRowBtnClick(e) {
         localStorage.setItem('propUser', JSON.stringify(e));
         window.location.href = '/adminViewUser';
 
@@ -44,88 +44,82 @@ function SearchUserFun(props) {
 
 
     return (
-        
-        <Modal 
+
+        <Modal
             {...props}
             size="lg"
             aria-labelledby="contained-modal-title-vcenter"
             centered
-            
-           
+
+
         ><div className='modelContainer'>
-            <Modal.Header closeButton >
-                <Modal.Title id="contained-modal-title-vcenter">
-                    <h1 className='headerFont'>Search Users</h1>
+                <Modal.Header closeButton >
+                    <Modal.Title id="contained-modal-title-vcenter">
+                        <h1 className='headerFont'>Search Users</h1>
 
-                </Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-                <div className="searchForm">
-                    <div className="SearchBarDiv">
+                    </Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <div className="searchForm">
+                        <div className="SearchBarDiv">
 
-                        <Form className="d-flex" onSubmit={searchUsers}>
-                            <div className='searchBar'>
-                                <Form.Control
-                                    type="search"
-                                    placeholder="Search"
-                                    className="me-2"
-                                    aria-label="Search"
-                                    onChange={handleInputChange}
-                                />
-                            </div>
-                            <div className='searchBtn'>
-                                <Button type='submit' className= 'successBTN' variant="outline-success">Search</Button>
-                            </div>
+                            <Form className="d-flex" onSubmit={searchUsers}>
+                                <div className='searchBar'>
+                                    <Form.Control
+                                        type="search"
+                                        placeholder="Search"
+                                        className="me-2"
+                                        aria-label="Search"
+                                        onChange={handleInputChange}
+                                    />
+                                </div>
+                                <div className='searchBtn'>
+                                    <Button type='submit' className='successBTN' variant="outline-success">Search</Button>
+                                </div>
 
-                        </Form>
-                    </div>
-                    <div className="displayResultsDiv">
-                        {results.length > 0 ? (
+                            </Form>
+                        </div>
+                        <div className="displayResultsDiv">
+                            {results.length > 0 ? (
 
-                            <ul>
+                                <ul>
 
-                                {results.map(result => (
+                                    {results.map(result => (
 
-                                    <li key={result._id}>
-                                        <button className='userRowContainerBtn' onClick={() => handleRowBtnClick(result)}>
-                                            <div className='userRowContainer'>
-                                                <div className='userRowDP'>
-                                                    <img className='userRowDP' src={result.proPic}></img>
+                                        <li key={result._id}>
+                                            <button className='userRowContainerBtn' onClick={() => handleRowBtnClick(result)}>
+                                                <div className='userRowContainer'>
+                                                    <div className='userRowDP'>
+                                                        <img className='userRowDP' src={result.proPic}></img>
+                                                    </div>
+                                                    <div className='userRowDetails'>
+                                                        <h6 className='detailsTxt'>User Name : {result.userName}</h6>
+                                                        <h6 className='detailsTxt'>User Fitness Goal : {result.goal}</h6>
+                                                        <h6 className='detailsTxt'>User plan : {result.myFitnessPlan}</h6>
+
+                                                    </div>
                                                 </div>
-                                                <div className='userRowDetails'>
-                                                    <h6 className='detailsTxt'>User Name : {result.userName}</h6>
-                                                    <h6 className='detailsTxt'>User Fitness Goal : {result.goal}</h6>
-                                                    <h6 className='detailsTxt'>User plan : {result.myFitnessPlan}</h6>
+                                            </button>
+                                        </li>
 
-                                                </div>
-                                            </div>
-                                        </button>
+                                    ))}
+                                </ul>
+                            ) : (
+                                <p className='headerFont-2'>No results found</p>
+                            )}
+                        </div>
 
-
-
-
-
-                                    </li>
-
-
-                                ))}
-                            </ul>
-                        ) : (
-                            <p className='headerFont-2'>No results found</p>
-                        )}
                     </div>
 
-                </div>
 
+                </Modal.Body>
+                <Modal.Footer>
 
-            </Modal.Body>
-            <Modal.Footer>
-
-                <Button onClick={props.onHide}>Close</Button>
-            </Modal.Footer>
+                    <Button onClick={props.onHide}>Close</Button>
+                </Modal.Footer>
             </div>
         </Modal>
-        
+
     )
 
 }

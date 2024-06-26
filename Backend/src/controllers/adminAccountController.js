@@ -1,6 +1,6 @@
 //CRUDs related to admin account will be handled by this class
 
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const newUserAdded = require('../models/UserAddedNotifyModel')
 const AdminAddNew = require('../models/AdminNewUser')
 const saltCount = 10;
