@@ -51,7 +51,6 @@ function UserAccountDisplay() {
 
     })
 
-
     if (resp.ok) {
       Cookies.remove('sessionName')
       window.location.href = '/'
@@ -156,13 +155,13 @@ function UserAccountDisplay() {
                 <div className='divFields'>
                   <label className='label-align'>Name</label>
                   <div className="middleRoundedRect">
-                    <span className="value">{userDetails?.userName}</span>
+                    <span className="value">{userDetails?.userName ?? "N/A"}</span>
                   </div>
                 </div>
                 <div className='divFields'>
                   <label className='label-align'>Age</label>
                   <div className="middleRoundedRect">
-                    <span className="value">{userDetails?.age}</span>
+                    <span className="value">{userDetails?.age ?? "N/A"}</span>
                   </div>
                 </div>
               </div>
@@ -171,14 +170,14 @@ function UserAccountDisplay() {
                 <div className='divFields'>
                   <label className='label-align'>Height</label>
                   <div className="middleRoundedRect">
-                    <span className="value">{userDetails?.height} m</span>
+                    <span className="value">{userDetails?.height !== null? `${userDetails?.height}m` : 'N/A'}</span>
                   </div>
                 </div>
                 <div className='divFields'>
                   <label className='label-align'>Weight</label>
 
                   <div className="middleRoundedRect">
-                    <span className="value">{userDetails?.weight} Kg</span>
+                    <span className="value">{userDetails?.weight !== null ? `${userDetails?.weight}Kg` : 'N/A'}</span>
                   </div>
                 </div>
               </div>
@@ -187,14 +186,14 @@ function UserAccountDisplay() {
                   <label className='label-align'>Contact No</label>
 
                   <div className="middleRoundedRect">
-                    <span className="value">{userDetails?.contactNo}</span>
+                    <span className="value">{userDetails?.contactNo ?? "N/A"}</span>
                   </div>
                 </div>
                 <div className='divFields'>
                   <label className='label-align'>BMI</label>
 
                   <div className="middleRoundedRect">
-                    <span className="value">{userDetails?.BMI}</span>
+                    <span className="value">{userDetails?.BMI ?? "N/A"}</span>
                   </div>
                 </div>
               </div>
@@ -203,14 +202,14 @@ function UserAccountDisplay() {
                   <label className='label-align'>Address</label>
 
                   <div className="middleRoundedRectAddress">
-                    <span className="value">{userDetails?.address}</span>
+                    <span className="value">{userDetails?.address ?? "N/A"}</span>
                   </div>
                 </div>
                 <div className='divFields'>
                   <label className='label-align'>Fitness Goal</label>
 
                   <div className="middleRoundedRect">
-                    <span className="value">{userDetails?.goal}</span>
+                    <span className="value">{userDetails?.goal ?? "N/A"}</span>
                   </div>
                 </div>
               </div>
@@ -218,14 +217,14 @@ function UserAccountDisplay() {
                 <div className='divFields'>
                   <label className='label-align'>Total Fat Percentage</label>
                   <div className="middleRoundedRect">
-                    <span className="value">{userDetails?.TFP}%</span>
+                    <span className="value">{userDetails?.TFP !== null ? `${userDetails?.TFP}%` : 'N/A'}</span>
                   </div>
                 </div>
                 <div className='divFieldsAD'>
                   <label className='label-align'>BMI</label>
 
                   <div className="middleRoundedRect">
-                    <span className="valueAD">{userDetails?.BMI}</span>
+                    <span className="valueAD">{userDetails?.BMI ?? "N/A"}</span>
                   </div>
                 </div>
               </div>

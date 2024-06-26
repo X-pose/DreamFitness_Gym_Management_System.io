@@ -74,7 +74,7 @@ function AccountDisplayUpdate() {
     const [address, setAddress] = useState(userDetails?.address);
     const [contactNo, setContactNo] = useState(userDetails?.contactNo);
     const [emergencyContact, setEmergencyContact] = useState(userDetails?.emergencyContact);
-    const [DOB, setDOB] = useState(userDetails?.DOB);
+    const [DOB, setDOB] = useState(userDetails?.DOB ?? "N/A");
     const [gender, setGender] = useState(userDetails?.gender);
     const [NIC, setNIC] = useState(userDetails?.NIC);
     const [email, setEmail] = useState(userDetails?.email);
@@ -312,7 +312,7 @@ function AccountDisplayUpdate() {
                                         <label>First Name</label>
                                     </div>
                                     <div className="field">
-                                        <a style={{ textDecoration: 'none' }}>{userDetails?.fName}</a>
+                                        <a style={{ textDecoration: 'none' }}>{userDetails?.fName ?? "N/A"}</a>
                                     </div>
                                 </div>
                                 <div className="detailField">
@@ -320,7 +320,7 @@ function AccountDisplayUpdate() {
                                         <label>Last Name</label>
                                     </div>
                                     <div className="field">
-                                        <a style={{ textDecoration: 'none' }}>{userDetails?.lName}</a>
+                                        <a style={{ textDecoration: 'none' }}>{userDetails?.lName ?? "N/A"}</a>
                                     </div>
                                 </div>
                                 <div className="detailField">
@@ -328,7 +328,7 @@ function AccountDisplayUpdate() {
                                         <label>Address</label>
                                     </div>
                                     <div className="field">
-                                        <a style={{ textDecoration: 'none' }}>{userDetails?.address}</a>
+                                        <a style={{ textDecoration: 'none' }}>{userDetails?.address ?? "N/A"}</a>
                                     </div>
                                 </div>
                                 <div className="detailField">
@@ -336,7 +336,7 @@ function AccountDisplayUpdate() {
                                         <label>Contact No</label>
                                     </div>
                                     <div className="field">
-                                        <a style={{ textDecoration: 'none' }}>{userDetails?.contactNo}</a>
+                                        <a style={{ textDecoration: 'none' }}>{userDetails?.contactNo ?? "N/A"}</a>
                                     </div>
                                 </div>
                                 <div className="detailField">
@@ -344,7 +344,7 @@ function AccountDisplayUpdate() {
                                         <label>Emergency Contact No</label>
                                     </div>
                                     <div className="field">
-                                        <a style={{ textDecoration: 'none' }}>{userDetails?.emergencyContact}</a>
+                                        <a style={{ textDecoration: 'none' }}>{userDetails?.emergencyContact ?? "N/A"}</a>
                                     </div>
                                 </div>
                                 <div className="detailField">
@@ -352,7 +352,7 @@ function AccountDisplayUpdate() {
                                         <label>Date of birth</label>
                                     </div>
                                     <div className="field">
-                                        <a style={{ textDecoration: 'none' }}>{userDetails?.DOB}</a>
+                                        <a style={{ textDecoration: 'none' }}>{userDetails?.DOB ?? "N/A"}</a>
                                     </div>
                                 </div>
                                 <div className="detailField">
@@ -360,7 +360,7 @@ function AccountDisplayUpdate() {
                                         <label>National ID</label>
                                     </div>
                                     <div className="field">
-                                        <a style={{ textDecoration: 'none' }}>{userDetails?.NIC}</a>
+                                        <a style={{ textDecoration: 'none' }}>{userDetails?.NIC ?? "N/A"}</a>
                                     </div>
                                 </div>
                                 <div className="detailField">
@@ -368,7 +368,7 @@ function AccountDisplayUpdate() {
                                         <label>Email</label>
                                     </div>
                                     <div className="field">
-                                        <a style={{ textDecoration: 'none' }}>{userDetails?.email}</a>
+                                        <a style={{ textDecoration: 'none' }}>{userDetails?.email ?? "N/A"}</a>
                                     </div>
                                 </div>
 
@@ -441,7 +441,7 @@ function AccountDisplayUpdate() {
                                         <label>Height</label>
                                     </div>
                                     <div className="field">
-                                        <a style={{ textDecoration: 'none' }}>{userDetails?.height}m</a>
+                                        <a style={{ textDecoration: 'none' }}>{userDetails?.height !== null? `${userDetails?.height}m` : 'N/A'}</a>
                                     </div>
                                 </div>
                                 <div className="detailField">
@@ -449,7 +449,7 @@ function AccountDisplayUpdate() {
                                         <label>Weight</label>
                                     </div>
                                     <div className="field">
-                                        <a style={{ textDecoration: 'none' }}>{userDetails?.weight}Kg</a>
+                                        <a style={{ textDecoration: 'none' }}>{userDetails?.weight !== null? `${userDetails?.weight}Kg` : 'N/A'}</a>
                                     </div>
                                 </div>
                                 <div className="detailField">
@@ -457,7 +457,7 @@ function AccountDisplayUpdate() {
                                         <label>Total Fat Percentage</label>
                                     </div>
                                     <div className="field">
-                                        <a style={{ textDecoration: 'none' }}>{userDetails?.TFP}%</a>
+                                        <a style={{ textDecoration: 'none' }}>{userDetails?.TFP !== null? `${userDetails?.TFP}%` : 'N/A'}</a>
                                     </div>
                                 </div>
 
